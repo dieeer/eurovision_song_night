@@ -1,10 +1,16 @@
+import SongCard from "./SongCard";
 
-import React from 'react'
+const SongList = ({songs}) => {
+    
+    const songData = songs.map((song) =>{ 
+    return <SongCard song={song} key={song._id}/>
+});
 
-const SongList = () => {
-  return (
-    <div>SongList</div>
-  )
+return (
+    <>
+        {songData}
+    </>
+);
+
 }
-
-export default SongList
+export default SongList;
