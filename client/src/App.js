@@ -3,7 +3,7 @@ import './App.css';
 import './services/EuroServices';
 import { getAll } from './services/EuroServices';
 import './components/SongList';
-import EuroSongsList from  './components/SongList';
+import SongList from  './components/SongList';
 function App() {
 
   const [SongsList, setSongsList] = useState([]);
@@ -15,7 +15,7 @@ function App() {
   }, []);
 
   return (
-    <EuroSongsList songs={SongsList}/>
+    <SongList songs={SongsList}/>
   );
 }
 
