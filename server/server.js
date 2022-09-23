@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 
 const cors = require('cors');
+
 app.use(cors());
 app.use(express.json());
 
@@ -13,7 +14,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     const db = client.db('eurovision');
     const songsCollection = db.collection('songs');
     const songsRouter = createRouter(songsCollection);
-    app.use('/api/songs', songsRouter);
+    app.use('/api/all', songsRouter);
   })
   .catch(console.err);
 
