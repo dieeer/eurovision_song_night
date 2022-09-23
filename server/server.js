@@ -15,9 +15,11 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     const songsCollection = db.collection('songs')
     const songsRouter = createRouter(songsCollection)
     app.use('/api/all', songsRouter)
+    // let the router use another end point and database collection
     const contestCollection = db.collection('contests')
     const contestRouter = createRouter(contestCollection)
     app.use('/api/contests', contestRouter)
+    // add further collections and routers here
   })
   .catch(console.err)
 
