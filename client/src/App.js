@@ -1,18 +1,22 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Home from './containers/Home'
 import NavBar from './components/NavBar.js'
+import Error from './components/Error'
+import PlaylistsContainer from './containers/PlaylistsContainer'
+import SongsContainer from './containers/SongsContainer'
+import ContestsContainer from './containers/ContestsContainer'
 
 function App() {
   return (
     <>
-    <NavBar/>
       <Router>
+    <NavBar/>
         <Routes>
-          <Route path="/"/>
-          <Route path="/songs" element={<SongsContainer />} />
-          <Route path="/playlists" element={<PlaylistsContainer />} />
+        <Route path ='/' element ={<Home/>}/>
+          <Route path="/songs" element={<SongsContainer/>} />
+          <Route path="/playlists" element={<PlaylistsContainer/>} />
           <Route path="/contests" element={<ContestsContainer/>}/>
-          <Route path ="/*" element={<Error/>}/>
         </Routes>
       </Router>
     </>
