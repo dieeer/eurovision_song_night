@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import './App.css';
-import './Components/EuroDB_Connection';
-import { getAll } from './Components/EuroDB_Connection';
-import './Components/EuroSongsList';
-import EuroSongsList from  './Components/EuroSongsList';
+import './services/EuroServices';
+import { getAll } from './services/EuroServices';
+import './components/SongList';
+import EuroSongsList from  './components/SongList';
 function App() {
 
   const [SongsList, setSongsList] = useState([]);
