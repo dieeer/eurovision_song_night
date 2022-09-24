@@ -1,28 +1,46 @@
-import { useState, useEffect } from "react";
-import './App.css';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { useState, useEffect } from 'react'
+import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './containers/Home'
 import NavBar from './components/NavBar.js'
 import PlaylistsContainer from './containers/PlaylistsContainer'
 import SongsContainer from './containers/SongsContainer'
 import ContestsContainer from './containers/ContestsContainer'
-import SongList from "./components/SongList";
+import SongList from './components/SongList'
+import Contest from './components/Contest'
+import ContestService from './services/contestService'
+import ContestDetail from './components/ContestDetail'
 
 function App() {
+  const [contests, setContests] = useState([])
+
+  useEffect(() => {
+    ContestService.getContests().then((contests) => setContests(contests))
+  }, [])
+
+  const getContestForId = (contestId) => {
+    return contests.find((contest) => contest._id === contestId)
+  }
 
   return (
     <>
       <Router>
-    <NavBar/>
+        <NavBar />
         <Routes>
-        <Route path ='/' element ={<Home/>}/>
-          <Route path="/songs" element={<SongsContainer/>} />
-          <Route path="/playlists" element={<PlaylistsContainer/>} />
-          <Route path="/contests" element={<ContestsContainer/>}/>
-        </Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/songs' element={<SongsContainer />} />
+          <Route path='/playlists' element={<PlaylistsContainer />} />
+          <Route
+            path='/contests'
+            element={<ContestsContainer contests={contests} />}
+          />
+          <Route
+          path="/contests/:id"
+          element={<ContestDetail getContestForId={getContestForId}/>} />
+          </Routes>
       </Router>
     </>
-  );
-  }
+  )
+}
 
-export default App;
+export default App
