@@ -18,6 +18,8 @@ function App() {
     ContestService.getContests().then((contests) => setContests(contests))
   }, [])
 
+  
+
   const getContestForId = (contestId) => {
     return contests.find((contest) => contest._id === contestId)
   }
