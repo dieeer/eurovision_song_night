@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import SongList from '../components/SongList';
+import SongSearchBar from '../components/SongSearchBar';
 import { getAll } from '../services/EuroServices';
 
 
@@ -17,7 +18,6 @@ const SongsContainer = () => {
 
   return (
     <>
-    <div>SongsContainer</div>
       <SongList songs={SongsList} />
     </>
   )
