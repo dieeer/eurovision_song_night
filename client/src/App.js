@@ -9,6 +9,7 @@ import ContestsContainer from './containers/ContestsContainer'
 import SongList from './components/SongList'
 import Contest from './components/Contest'
 import ContestService from './services/contestService'
+import SongService from './services/songService'
 import ContestDetail from './components/ContestDetail'
 
 function App() {
@@ -18,10 +19,17 @@ function App() {
     ContestService.getContests().then((contests) => setContests(contests))
   }, [])
 
-  
+  const [songs, setSongs] = useState([])
+
+  useEffect(() => {
+    SongService.getSongs().then((songs) => setSongs(songs))
+  }, [])
 
   const getContestForId = (contestId) => {
     return contests.find((contest) => contest._id === contestId)
+  }
+  const getSongsForContest = (songId) => {
+  return songs.find((song) => song._id === songId)
   }
 
   return (
@@ -37,9 +45,15 @@ function App() {
             element={<ContestsContainer contests={contests} />}
           />
           <Route
-          path="/contests/:id"
-          element={<ContestDetail getContestForId={getContestForId}/>} />
-          </Routes>
+            path='/contests/:id'
+            element={
+              <ContestDetail
+                getContestForId={getContestForId}
+                getSongsForContest={getSongsForContest}
+              />
+            }
+          />
+        </Routes>
       </Router>
     </>
   )
