@@ -12,23 +12,35 @@ import ContestService from './services/contestService'
 import SongService from './services/songService'
 import ContestDetail from './components/ContestDetail'
 import Game from './components/Game'
+import playlistService from './services/playlistService'
 
 function App() {
-  const [contests, setContests] = useState([])
 
+  // const based on a list of contests.
+  
+  const [contests, setContests] = useState([]);
+  
   useEffect(() => {
     ContestService.getContests().then((contests) => setContests(contests))
   }, [])
-
-  const [songs, setSongs] = useState([])
-
-  useEffect(() => {
-    SongService.getSongs().then((songs) => setSongs(songs))
-  }, [])
-
+  
   const getContestForId = (contestId) => {
     return contests.find((contest) => contest._id === contestId)
   }
+  
+  // const based on list of songs.
+  const [songs, setSongs] = useState([])
+  
+  useEffect(() => {
+    SongService.getSongs().then((songs) => setSongs(songs))
+  }, [])
+  
+  // const based on a list of playlists.
+  const [playlists, setPlaylists] = useState([]);
+
+  useEffect(() => {
+    playlistService.getPlaylists().then((playlists) => setPlaylists(playlists))
+  }, [])
 
   return (
     <>
@@ -37,7 +49,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/songs' element={<SongsContainer />} />
-          <Route path='/playlists' element={<PlaylistsContainer />} />
+          <Route path='/playlists'
+          element={<PlaylistsContainer playlists={playlists}/>}
+          />
           <Route
             path='/contests'
             element={<ContestsContainer contests={contests} />}

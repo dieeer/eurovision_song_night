@@ -1,8 +1,11 @@
 import React from 'react'
+import PlaylistList from '../components/PlaylistList'
 
-const PlaylistsContainer = () => {
+const PlaylistsContainer = ({playlists}) => {
   return (
-    <div>PlaylistsContainer</div>
+    <>
+      <PlaylistList playlists={playlists}/>
+    </>
   )
 }
 

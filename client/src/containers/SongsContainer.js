@@ -28,7 +28,7 @@ const SongsContainer = () => {
   return (
     <>
       <SongSearchBar songs={SongsList}/>
-      {/* <SongList songs={SongsList} /> */}
+      <SongList songs={SongsList} />
     </>
   )
 }
