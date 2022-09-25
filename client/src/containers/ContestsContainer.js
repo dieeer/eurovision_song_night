@@ -1,8 +1,11 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
+import Contest from '../components/Contest'
+import ContestList from '../components/ContestList'
 
-const ContestsContainer = () => {
+const ContestsContainer = ({contests}) => {
+
   return (
-    <div>ContestsContainer</div>
+    <><ContestList contests={contests} /></>
   )
 }
 
