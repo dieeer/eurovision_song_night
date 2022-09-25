@@ -6,7 +6,6 @@ import NavBar from './components/NavBar.js'
 import PlaylistsContainer from './containers/PlaylistsContainer'
 import SongsContainer from './containers/SongsContainer'
 import ContestsContainer from './containers/ContestsContainer'
-import SongList from "./components/SongList";
 
 function App() {
 

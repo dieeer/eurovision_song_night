@@ -1,6 +1,10 @@
 import React, {useState} from 'react'
+import SongCard from './SongCard';
+import SongList from './SongList';
 
-const SongSearchBar = (SongsList) => {
+const SongSearchBar = ({songs}) => {
+
+  // console.log('Song in SearchBar', songs)
 
   const [value, setValue] = useState("");
 
@@ -11,11 +15,16 @@ const SongSearchBar = (SongsList) => {
 
   const onSearch = (searchTerm) => {
     setValue(searchTerm);
-    console.log("search ", searchTerm);
+    console.log("searchTerm", searchTerm);
   };
+
+  const songArray = songs.map((song) => {
+    return [song]
+  })
+    console.log('SongArray', songArray)
   
-  const SongData = SongsList.song;
-  console.log(SongData);
+  // const SongData = songs;
+  // console.log('SongData in SearchBar', songs);
 
   return (
     
@@ -24,9 +33,8 @@ const SongSearchBar = (SongsList) => {
           <input type="text" value={value} onChange={onChange} />
           <button onClick={() => onSearch(value)}> Search </button>
         </div>
-        <div>
-          {SongData
-            .filter((songs) => {
+         <div>
+          {songs.filter((songs) => {
               const searchTerm = value.toLowerCase();
               const song = songs.song.toLowerCase();
 
@@ -43,10 +51,13 @@ const SongSearchBar = (SongsList) => {
                 {songs.song}
               </div>
             ))}
-      </div>
+            </div>
+            {/* return <SongCard song={song} key={song._id}/> */}
     </div>
   );
   
 }
 
 export default SongSearchBar;
+
+
