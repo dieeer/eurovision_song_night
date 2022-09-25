@@ -41,7 +41,7 @@ const createRouter = function (collection) {
       });
   });
 
-  router.post("/", (req, res) => {
+  router.post("/",(req, res) => {
     collection
     .insertOne(req.body)
     .then((result) => res.json(result.ops[0]))
@@ -71,10 +71,10 @@ const createRouter = function (collection) {
     const updatedData = req.body;
     collection
     .updateOne(
-      { _id: ObjectId(id)},
-      { $set: updatedData },
+      { _id: ObjectID(id) },
+      { $set: updatedData }
     )
-    .then((result) => {
+    .then(result => {
       res.json(result)
     })
     .catch((err) => {
@@ -82,7 +82,8 @@ const createRouter = function (collection) {
       res.status(500);
       res.json({ status: 500, error: err });
     });
-  })
+  });
+  
 
 
   return router;

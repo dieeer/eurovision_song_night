@@ -16,6 +16,33 @@ const playlistService = {
         }).then((res) => res.json())
     },
 
+    // add song to playlist 'songs' array
+    addSongToPlaylist(playlistId, songId) {
+        return fetch(baseURL + playlistId, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({songId: songId, playlistId: playlistId, songs:[].push(songId)}),
+        }).then((res) => res.json())
+    },
+
+    // update playlist 
+    updatePlaylist(playlist) {
+        return fetch(baseURL + playlist._id, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(playlist),
+        }).then((res) => res.json())
+    },
+    
+
+
+
+
+
 
     deletePlaylist(id) {
         return fetch(baseURL + id, {

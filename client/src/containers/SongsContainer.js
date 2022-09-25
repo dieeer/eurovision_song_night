@@ -4,9 +4,10 @@ import SongList from '../components/SongList';
 import SongSearchBar from '../components/SongSearchBar';
 import { getAll } from '../services/EuroServices';
 import SongCard from '../components/SongCard';
+import playlistService from '../services/playlistService'
 
 
-const SongsContainer = () => {
+const SongsContainer = ({playlists}) => {
 
   const [SongsList, setSongsList] = useState([]);
 
@@ -15,6 +16,8 @@ const SongsContainer = () => {
       setSongsList(allSongs);
     })
   }, []);
+
+
 
 // const filter = (searchTerm) => {
 //   const lowerSearch = searchTerm.toLowerCase();
@@ -28,7 +31,8 @@ const SongsContainer = () => {
   return (
     <>
       <SongSearchBar songs={SongsList}/>
-      <SongList songs={SongsList} />
+      <SongList songs={SongsList} playlists={playlists}/>
+
     </>
   )
 }

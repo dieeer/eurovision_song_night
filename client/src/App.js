@@ -70,7 +70,7 @@ function App() {
           <Route path='/' element={<Home />} />
 
           {/* SONG ROUTES */}
-          <Route path='/songs' element={<SongsContainer />} />
+          <Route path='/songs' element={<SongsContainer playlists={playlists} />} />
           
           {/* PLAYLIST ROUTES */}
           <Route path='/playlists'
