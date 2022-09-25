@@ -1,18 +1,32 @@
+// FUNCTIONAL IMPORTS
 import { useState, useEffect } from 'react'
-import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+// UNIVERSAL COMPONENT IMPORTS
 import Home from './containers/Home'
 import NavBar from './components/NavBar.js'
-import PlaylistsContainer from './containers/PlaylistsContainer'
-import SongsContainer from './containers/SongsContainer'
-import ContestsContainer from './containers/ContestsContainer'
-import SongList from './components/SongList'
+
+// CONTESTS IMPORTS.
 import Contest from './components/Contest'
 import ContestService from './services/contestService'
-import SongService from './services/songService'
 import ContestDetail from './components/ContestDetail'
-import Game from './components/Game'
+import ContestsContainer from './containers/ContestsContainer'
+
+// SONGS IMPORTS.
+import SongList from './components/SongList'
+import SongsContainer from './containers/SongsContainer'
+import SongService from './services/songService'
+
+// PLAYLISTS IMPORTS
 import playlistService from './services/playlistService'
+import PlaylistsContainer from './containers/PlaylistsContainer'
+import PlaylistDetail from './components/PlaylistDetail'
+
+// GAME IMPORT
+import Game from './components/Game'
+
+// CSS IMPORT
+import './App.css'
 
 function App() {
 
@@ -42,16 +56,34 @@ function App() {
     playlistService.getPlaylists().then((playlists) => setPlaylists(playlists))
   }, [])
 
+  const getPlaylistForId = (playlistId) => {
+    return playlists.find((playlist) => playlist._id === playlistId)
+  }
+
+  
+
   return (
     <>
       <Router>
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/songs' element={<SongsContainer />} />
+
+          {/* SONG ROUTES */}
+          <Route path='/songs' element={<SongsContainer playlists={playlists} />} />
+          
+          {/* PLAYLIST ROUTES */}
           <Route path='/playlists'
-          element={<PlaylistsContainer playlists={playlists}/>}
+          element={<PlaylistsContainer playlists={playlists} />}
           />
+          <Route path='/playlists/:id'
+          element={
+                <PlaylistDetail getPlaylistForId={getPlaylistForId}
+              />
+            }
+          />
+
+          {/* CONTEST ROUTES */}
           <Route
             path='/contests'
             element={<ContestsContainer contests={contests} />}
@@ -64,6 +96,8 @@ function App() {
               />
             }
           />
+
+          {/* GAME ROUTES */}
           <Route
             path='/game'
             element={

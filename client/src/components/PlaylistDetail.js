@@ -1,17 +1,56 @@
 import {useParams} from 'react-router-dom';
-import { useState } from 'react';
+import {useEffect, useState } from 'react';
+import SongCard from './SongCard';
+import SongList from './SongList';
+import {Link} from 'react-router-dom';
+import playlistService from '../services/playlistService';
 
 const PlaylistDetail = ({getPlaylistForId}) => {
     const {id} = useParams()
     const singlePlaylist = getPlaylistForId(id);
     const [playlist, setPlaylist] = useState(singlePlaylist)
 
+    useEffect(() => {
+        const url = `http://localhost:5000/api/playlists/${id}`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setPlaylist(data))
+    }, [id])
+
+
+// show details for each song in 'songs' array
+const songData = playlist.songs.map((song) => {
+    return (<>
+        <li><SongCard key={song._id} song={song} /></li>
+    </>
+    )
+})
+
+// delete playlist button
+const handleDeletePlaylist = () => {
+    playlistService.deletePlaylist(playlist._id)
+}
+
+
+
+
+
+
+        
+
     return (
-        <div>
+        <div className='playlist-wrapper'>
             {playlist.name}
+            <form onSubmit={handleDeletePlaylist}>
+            <input type='submit' name='submit'  value='Delete Playlist' />
+            </form>
             <br/>
-            {playlist.songs}
+            <ol>
+            {songData}
+            </ol>
             <br/>
         </div>
     )
 }
+
+export default PlaylistDetail;
