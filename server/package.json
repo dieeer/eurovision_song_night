@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server:dev": "nodemon server.js",
     "seeds": "mongosh < db/seeds.js",
-    "contest-seeds": "mongosh < db/contest_seeds.js"
+    "contest-seeds": "mongosh < db/contest_seeds.js",
+    "playlist-seeds": "mongosh < db/playlist_seeds.js"
   },
   "author": "",
   "license": "ISC",

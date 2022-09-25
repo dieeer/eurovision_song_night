@@ -1,6 +1,6 @@
 const baseURL = 'http://localhost:9000/api/contests/'
 
-const ContestService = {
+const contestService = {
   getContests() {
     return fetch(baseURL).then((res) => res.json())
   },
@@ -20,4 +20,4 @@ const ContestService = {
   },
 }
 
-export default ContestService
+export default contestService;
