@@ -12,6 +12,7 @@ import ContestService from './services/contestService'
 import SongService from './services/songService'
 import ContestDetail from './components/ContestDetail'
 import Game from './components/Game'
+
 function App() {
   const [contests, setContests] = useState([])
 

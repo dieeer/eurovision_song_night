@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import SongList from '../components/SongList';
 import SongSearchBar from '../components/SongSearchBar';
 import { getAll } from '../services/EuroServices';
+import SongCard from '../components/SongCard';
 
 
 const SongsContainer = () => {
@@ -15,10 +16,19 @@ const SongsContainer = () => {
     })
   }, []);
 
+// const filter = (searchTerm) => {
+//   const lowerSearch = searchTerm.toLowerCase();
+//   const filteredStories = stories.filter((story) => {
+//     return story.title.toLowerCase().indexOf(lowerSearch) > -1;
+//   });
+//   setFilteredStories(filteredStories);
+// }
+
 
   return (
     <>
-      <SongList songs={SongsList} />
+      <SongSearchBar songs={SongsList}/>
+      {/* <SongList songs={SongsList} /> */}
     </>
   )
 }
