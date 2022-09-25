@@ -1,10 +1,10 @@
 import React from 'react'
 import PlaylistList from '../components/PlaylistList'
 
-const PlaylistsContainer = ({playlists}) => {
+const PlaylistsContainer = ({playlists, deletePlaylist}) => {
   return (
     <>
-      <PlaylistList playlists={playlists}/>
+      <PlaylistList playlists={playlists} deletePlaylist={deletePlaylist}/>
     </>
   )
 }

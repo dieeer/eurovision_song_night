@@ -60,15 +60,26 @@ function App() {
     return playlists.find((playlist) => playlist._id === playlistId)
   }
 
+  const deletePlaylist = (playlistId) => {
+    // delete playlist from db
+    playlistService.deletePlaylist(playlistId)
+  // delete locally
+    setPlaylists(playlists.filter((playlist) => playlist._id !== playlistId));
+  }
+
   return (
     <>
       <Router>
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
+
+          {/* SONG ROUTES */}
           <Route path='/songs' element={<SongsContainer />} />
+          
+          {/* PLAYLIST ROUTES */}
           <Route path='/playlists'
-          element={<PlaylistsContainer playlists={playlists}/>}
+          element={<PlaylistsContainer playlists={playlists} deletePlaylist={deletePlaylist}/>}
           />
           <Route path='/playlists/:id'
           element={
@@ -76,6 +87,8 @@ function App() {
               />
             }
           />
+
+          {/* CONTEST ROUTES */}
           <Route
             path='/contests'
             element={<ContestsContainer contests={contests} />}
@@ -88,6 +101,8 @@ function App() {
               />
             }
           />
+
+          {/* GAME ROUTES */}
           <Route
             path='/game'
             element={

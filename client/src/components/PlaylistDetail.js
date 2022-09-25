@@ -9,26 +9,23 @@ const PlaylistDetail = ({getPlaylistForId}) => {
     const singlePlaylist = getPlaylistForId(id);
     const [playlist, setPlaylist] = useState(singlePlaylist)
 
-    // const songsInPlaylist = ({playlist}) => {
-    //     const allSongsInPlaylist = playlist.songs.map((songs) => {
-    //         return (
-    //             <ul>
-    //                 <li>
-    //                     <SongList key={songs._id} songs={songs}/>
-    //                 </li>
-    //             </ul>
-    //         )
-    //     })
-
-        // }
+// show details for each song in 'songs' array
+const songData = playlist.songs.map((song) => {
+    return (<>
+        <li><SongCard key={song._id} song={song} /></li>
+    </>
+    )
+})
 
         
 
     return (
-        <div>
+        <div className='playlist-wrapper'>
             {playlist.name}
             <br/>
-            {playlist.songs[0]['song']}
+            <ol>
+            {songData}
+            </ol>
             <br/>
         </div>
     )

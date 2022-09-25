@@ -17,6 +17,6 @@ const playlistService = {
         return fetch(baseURL + id, {
             method: 'DELETE',
         })
-    },
+    }, 
 }
-export default playlistService;
+export default playlistService; 
