@@ -1,16 +1,22 @@
 import { useParams } from 'react-router-dom'
-import YoutubeEmbed from './YoutubeEmbed'
+import Game from './Game'
+import { useState } from 'react'
 
-const ContestDetail = ({ getContestForId, getSongsForContest }) => {
+const ContestDetail = ({ getContestForId }) => {
   const { id } = useParams()
-  const contest = getContestForId(id)
-  const song = getSongsForContest(contest.songs['song1'])
+  const singleContest = getContestForId(id)
+  const [contest, setContest] = useState(singleContest)
+  const [playedGame, setPlayedGame] = useState(contest)
 
   return (
     <div>
       {contest.name}
       <br />
-        <YoutubeEmbed url={song.youtube_url} />
+      {contest.players}
+      <br />
+      {contest.playlist[0]['song']}
+
+      <Game playedGame={playedGame} />
     </div>
   )
 }

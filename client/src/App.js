@@ -11,7 +11,7 @@ import Contest from './components/Contest'
 import ContestService from './services/contestService'
 import SongService from './services/songService'
 import ContestDetail from './components/ContestDetail'
-
+import Game from './components/Game'
 function App() {
   const [contests, setContests] = useState([])
 
@@ -27,9 +27,6 @@ function App() {
 
   const getContestForId = (contestId) => {
     return contests.find((contest) => contest._id === contestId)
-  }
-  const getSongsForContest = (songId) => {
-  return songs.find((song) => song._id === songId)
   }
 
   return (
@@ -49,7 +46,14 @@ function App() {
             element={
               <ContestDetail
                 getContestForId={getContestForId}
-                getSongsForContest={getSongsForContest}
+              />
+            }
+          />
+          <Route
+            path='/game'
+            element={
+              <Game
+                getContestForId={getContestForId}
               />
             }
           />
