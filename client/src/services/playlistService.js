@@ -5,13 +5,17 @@ const playlistService = {
         return fetch(baseURL).then((res) => res.json())
     },
 
-    postPlaylist(payload) {
+    // create new playlist with prompt for custom 'name' and empty 'songs' array
+    createPlaylist() {
         return fetch(baseURL, {
             method: 'POST',
-            body: JSON.stringify(payload),
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({name: prompt('Enter a name for your playlist'), songs: []}),
         }).then((res) => res.json())
     },
+
 
     deletePlaylist(id) {
         return fetch(baseURL + id, {
@@ -19,4 +23,5 @@ const playlistService = {
         })
     }, 
 }
+
 export default playlistService; 

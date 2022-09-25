@@ -60,12 +60,7 @@ function App() {
     return playlists.find((playlist) => playlist._id === playlistId)
   }
 
-  const deletePlaylist = (playlistId) => {
-    // delete playlist from db
-    playlistService.deletePlaylist(playlistId)
-  // delete locally
-    setPlaylists(playlists.filter((playlist) => playlist._id !== playlistId));
-  }
+  
 
   return (
     <>
@@ -79,7 +74,7 @@ function App() {
           
           {/* PLAYLIST ROUTES */}
           <Route path='/playlists'
-          element={<PlaylistsContainer playlists={playlists} deletePlaylist={deletePlaylist}/>}
+          element={<PlaylistsContainer playlists={playlists} />}
           />
           <Route path='/playlists/:id'
           element={
