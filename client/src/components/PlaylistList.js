@@ -4,14 +4,15 @@ import playlistService, {createPlaylist} from '../services/playlistService'
 import {useEffect, useState} from 'react';
 
 const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
-    const [name, setName] = useState('');
-    const [songs, setSongs] = useState([]);
-
-    const handleNameChange = (event) => setName(event.target.value)
-    const handleSongChange = (event) => setSongs(event.target.value)
 
     
-    // map the data, then put the data into playlist info state 
+    const [name, setName] = useState('');
+    const [songs, setSongs] = useState([]);
+    
+    const handleNameChange = (event) => setName(event.target.value)
+    const handleSongChange = (event) => setSongs(event.target.value)
+    
+
     
     // const [playlistInfo, setPlaylistInfo] = useState(playlistService.getPlaylists())
 
@@ -24,21 +25,9 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
             )
         })
     
-    // useEffect(() => {
-    //     playlistService.getPlaylists()
-    //     }, [playlistInfo])
-        
 
 
 
-
-    // // get length of 'songs' array in each playlist
-    // const songCount = playlists.map((playlist) => {
-    //     if (playlist.songs.length === false) {
-    //         return 0
-    //     }
-    //     return playlist.songs.length
-    // })
 
     // Delete a playlist.
     const handleDeletePlaylist = (_id) => {
@@ -66,7 +55,6 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
         </form>
         <ul>
         {playlistData}
-        
         </ul>
         </div>
         </>

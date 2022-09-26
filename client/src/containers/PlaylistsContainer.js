@@ -10,6 +10,7 @@ const PlaylistsContainer = ({playlists}) => {
   // Create a new playlist.
   const createPlaylist = () => {
     playlistService.createPlaylist()
+    
       .then(() => {
         playlistService.getPlaylists()
           .then(data => setPlaylistInfo(data))
