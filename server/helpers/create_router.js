@@ -29,6 +29,18 @@ const createRouter = function (collection) {
       });
   });
 
+  router.get('/songs/:id', (req, res) => {
+    collection
+      .find()
+      .toArray()
+      .then((docs) => res.json(docs))
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err });
+      });
+  });
+
   router.get('/:id', (req, res) => {
     const id = req.params.id;
     collection
@@ -65,6 +77,7 @@ const createRouter = function (collection) {
       res.json({ status: 500, error: err });
     });
   });
+
 
   router.put('/:id', (req, res) => {
     const id = req.params.id;

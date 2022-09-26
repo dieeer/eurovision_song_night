@@ -11,6 +11,7 @@ import Contest from './components/Contest'
 import ContestService from './services/contestService'
 import ContestDetail from './components/ContestDetail'
 import ContestsContainer from './containers/ContestsContainer'
+// import IndividualSongCard from './components/IndividualSongCard'
 
 // SONGS IMPORTS.
 import SongList from './components/SongList'
@@ -71,6 +72,8 @@ function App() {
 
           {/* SONG ROUTES */}
           <Route path='/songs' element={<SongsContainer playlists={playlists} />} />
+          {/* <Route path="/song/:id" element={<IndividualSongCard/>} /> */}
+
           
           {/* PLAYLIST ROUTES */}
           <Route path='/playlists'
