@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-import PlayersForm from "../components/PlayersForm";
-import PlayersGrid from "../components/PlayersGrid";
-import { getPlayers } from "../components/PlayersService";
-import PlayersCard from "../components/PlayersCard";
+import PlayersForm from "../main_components/PlayersForm";
+import PlayersGrid from "../main_components/PlayersGrid";
+import { getPlayers } from "../main_components/PlayersService";
+import PlayersCard from "../main_components/PlayersCard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "../components/NavBar"
+import NavBar from "../main_components/NavBar"
 const PlayersContainer = () => {
     const [players, setPlayers] = useState([]);
 
