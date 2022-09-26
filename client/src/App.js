@@ -6,6 +6,7 @@ import NavBar from './components/NavBar.js'
 import PlaylistsContainer from './containers/PlaylistsContainer'
 import SongsContainer from './containers/SongsContainer'
 import ContestsContainer from './containers/ContestsContainer'
+import IndividualSongCard from './components/IndividualSongCard'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/songs" element={<SongsContainer/>} />
           <Route path="/playlists" element={<PlaylistsContainer/>} />
           <Route path="/contests" element={<ContestsContainer/>}/>
+          <Route path="/song/:id" element={<IndividualSongCard/>} />
         </Routes>
       </Router>
     </>
