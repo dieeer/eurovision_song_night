@@ -25,12 +25,10 @@ import PlaylistDetail from './components/PlaylistDetail'
 
 // GAME IMPORT
 import Game from './components/Game'
-
-// CSS IMPORT
-import './App.css'
-
+import PlayersContainer from './containers/PlayersContainer'
 function App() {
-
+  const [contests, setContests] = useState([])
+  
   // const based on a list of contests.
   
   const [contests, setContests] = useState([]);
@@ -65,10 +63,12 @@ function App() {
 
   return (
     <>
+   
       <Router>
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
+
 
           {/* SONG ROUTES */}
           <Route path='/songs' element={<SongsContainer playlists={playlists} />} />
@@ -85,6 +85,7 @@ function App() {
               />
             }
           />
+          <Route path='/players' element={<PlayersContainer />} />
 
           {/* CONTEST ROUTES */}
           <Route

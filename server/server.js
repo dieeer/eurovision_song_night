@@ -24,6 +24,9 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     const playlistRouter = createRouter(playlistCollection)
     app.use('/api/playlists', playlistRouter)
     // add further collections and routers here
+    const playersCollection = db.collection('players')
+    const playersRouter = createRouter(playersCollection)
+    app.use('/api/players', playersRouter)
   })
   .catch(console.err)
 

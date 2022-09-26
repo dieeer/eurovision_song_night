@@ -9,6 +9,7 @@
     "seeds": "mongosh < db/seeds.js",
     "contest-seeds": "mongosh < db/contest_seeds.js",
     "playlist-seeds": "mongosh < db/playlist_seeds.js"
+    "players-seeds": "mongosh < db/players_seeds.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +19,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mongodb": "^3.5.7"
+    "mongodb": "^3.5.7",
+    "react-router-dom": "^6.4.1"
   }
 }
