@@ -26,9 +26,7 @@ import PlaylistDetail from './components/PlaylistDetail'
 // GAME IMPORT
 import Game from './components/Game'
 import PlayersContainer from './containers/PlayersContainer'
-function App() {
-  const [contests, setContests] = useState([])
-  
+function App() {  
   // const based on a list of contests.
   
   const [contests, setContests] = useState([]);
