@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import SongSearchBar from '../components/SongSearchBar'
+import SongSearchBar from '../main_components/SongSearchBar'
 import { getAll } from '../services/EuroServices'
-import SongList from '../components/SongList'
+import SongList from '../main_components/SongList'
 
   const SongsContainer = ({ playlists }) => {
   const [SongsList, setSongsList] = useState([])
