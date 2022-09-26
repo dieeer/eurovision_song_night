@@ -43,19 +43,11 @@ function App() {
           />
           <Route
             path='/contests/:id'
-            element={
-              <ContestDetail
-                getContestForId={getContestForId}
-              />
-            }
+            element={<ContestDetail getContestForId={getContestForId} />}
           />
           <Route
             path='/game'
-            element={
-              <Game
-                getContestForId={getContestForId}
-              />
-            }
+            element={<Game getContestForId={getContestForId} />}
           />
         </Routes>
       </Router>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import SongList from '../components/SongList';
-import SongSearchBar from '../components/SongSearchBar';
 import { getAll } from '../services/EuroServices';
 
 
