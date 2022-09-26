@@ -6,7 +6,7 @@ import { getAll } from '../services/EuroServices';
 import SongList from '../components/SongList';
 
 
-const SongsContainer = () => {
+const SongsContainer = ({playlists}) => {
 
   const [SongsList, setSongsList] = useState([]);
   const [filteredSongs, setFilteredSongs] = useState([]);
