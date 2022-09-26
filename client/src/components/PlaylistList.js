@@ -1,7 +1,7 @@
 import React from 'react';
 import Playlist from './Playlist';
-import {createPlaylist} from '../services/playlistService'
-import {useState} from 'react';
+import playlistService, {createPlaylist} from '../services/playlistService'
+import {useEffect, useState} from 'react';
 
 const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
     const [name, setName] = useState('');
@@ -10,6 +10,11 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
     const handleNameChange = (event) => setName(event.target.value)
     const handleSongChange = (event) => setSongs(event.target.value)
 
+    
+    // map the data, then put the data into playlist info state 
+    
+    // const [playlistInfo, setPlaylistInfo] = useState(playlistService.getPlaylists())
+
 
     const playlistData = playlists.map((playlist) => {
         return (<>
@@ -17,16 +22,23 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
             <button onClick={() => deletePlaylist(playlist._id)}>delete</button>
             </>
             )
-    })
+        })
+    
+    // useEffect(() => {
+    //     playlistService.getPlaylists()
+    //     }, [playlistInfo])
+        
 
 
-    // get length of 'songs' array in each playlist
-    const songCount = playlists.map((playlist) => {
-        if (playlist.songs.length === false) {
-            return 0
-        }
-        return playlist.songs.length
-    })
+
+
+    // // get length of 'songs' array in each playlist
+    // const songCount = playlists.map((playlist) => {
+    //     if (playlist.songs.length === false) {
+    //         return 0
+    //     }
+    //     return playlist.songs.length
+    // })
 
     // Delete a playlist.
     const handleDeletePlaylist = (_id) => {
@@ -53,7 +65,8 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
         <input type='submit' name='submit'  value='Create Playlist' />
         </form>
         <ul>
-        {playlistData.length > 0 ? playlistData : 'no playlists, yet!'}
+        {playlistData}
+        
         </ul>
         </div>
         </>
