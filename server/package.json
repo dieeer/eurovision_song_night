@@ -8,7 +8,7 @@
     "server:dev": "nodemon server.js",
     "seeds": "mongosh < db/seeds.js",
     "contest-seeds": "mongosh < db/contest_seeds.js",
-    "playlist-seeds": "mongosh < db/playlist_seeds.js"
+    "playlist-seeds": "mongosh < db/playlist_seeds.js",
     "players-seeds": "mongosh < db/players_seeds.js"
   },
   "author": "",
