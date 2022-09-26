@@ -1,5 +1,5 @@
-import NavBar from '../main_components/NavBar'
-import SongCard from '../main_components/SongCard';
+import NavBar from '../components/NavBar'
+import SongCard from '../components/SongCard';
 
 const Home = () => {
         return (
