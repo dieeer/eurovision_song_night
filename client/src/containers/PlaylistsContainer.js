@@ -1,5 +1,5 @@
 import React from 'react'
-import PlaylistList from '../main_components/PlaylistList'
+import PlaylistList from '../components/PlaylistList'
 import playlistService from '../services/playlistService'
 import {useEffect, useState} from 'react';
 

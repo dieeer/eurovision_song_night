@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
-import Contest from '../main_components/Contest'
-import ContestList from '../main_components/ContestList'
+import Contest from '../components/Contest'
+import ContestList from '../components/ContestList'
 
 const ContestsContainer = ({contests}) => {
 

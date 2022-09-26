@@ -4,27 +4,27 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // UNIVERSAL COMPONENT IMPORTS
 import Home from './containers/Home'
-import NavBar from './main_components/NavBar.js'
+import NavBar from './components/NavBar.js'
 
 // CONTESTS IMPORTS.
-import Contest from './main_components/Contest'
+import Contest from './components/Contest'
 import ContestService from './services/contestService'
-import ContestDetail from './main_components/ContestDetail'
+import ContestDetail from './components/ContestDetail'
 import ContestsContainer from './containers/ContestsContainer'
 // import IndividualSongCard from './components/IndividualSongCard'
 
 // SONGS IMPORTS.
-import SongList from './main_components/SongList'
+import SongList from './components/SongList'
 import SongsContainer from './containers/SongsContainer'
 import SongService from './services/songService'
 
 // PLAYLISTS IMPORTS
 import playlistService from './services/playlistService'
 import PlaylistsContainer from './containers/PlaylistsContainer'
-import PlaylistDetail from './main_components/PlaylistDetail'
+import PlaylistDetail from './components/PlaylistDetail'
 
 // GAME IMPORT
-import Game from './main_components/Game'
+import Game from './components/Game'
 import PlayersContainer from './containers/PlayersContainer'
 function App() {  
   // const based on a list of contests.
