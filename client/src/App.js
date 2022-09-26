@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './containers/Home'
 import NavBar from './components/NavBar.js'
@@ -12,8 +11,10 @@ import ContestService from './services/contestService'
 import SongService from './services/songService'
 import ContestDetail from './components/ContestDetail'
 import Game from './components/Game'
+import PlayersContainer from './containers/PlayersContainer'
 function App() {
   const [contests, setContests] = useState([])
+  
 
   useEffect(() => {
     ContestService.getContests().then((contests) => setContests(contests))
@@ -31,11 +32,13 @@ function App() {
 
   return (
     <>
+   
       <Router>
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/songs' element={<SongsContainer />} />
+          <Route path='/players' element={<PlayersContainer />} />
           <Route path='/playlists' element={<PlaylistsContainer />} />
           <Route
             path='/contests'

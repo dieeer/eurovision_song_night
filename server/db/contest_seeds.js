@@ -1,5 +1,6 @@
 use eurovision;
 
+
 db.contests.insertMany([
   {
   "name": "First Contest",
