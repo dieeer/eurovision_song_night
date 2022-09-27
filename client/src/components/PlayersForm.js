@@ -90,7 +90,9 @@ const PlayersForm = ({addPlayers}) => {
 
     return (
         <>
+        
         <section>
+        <img id="api-img" src={formData.img}  className="select-profile"/>
         <form onSubmit={onSubmit} id="players-form" >
             <h2>Add Players Here!</h2>
             <div className="formWrap">
@@ -122,17 +124,26 @@ const PlayersForm = ({addPlayers}) => {
             </div>
 
 
-            <img id="api-img" src={formData.img}  className="select-profile"/>
+            
             <input type="submit" value="Add Player" id="save"/>
 
 	    </form>
             
-         
+            <img id="api-img" src={link} className="static" />
             <button onClick={handleImg} className="avatar" > add </button>
+            <img id="api-img" src={link} className="static" />
             <button onClick={handleImg1} className="avatar"> add </button>
+            <img id="api-img" src={link} className="static" />
             <button onClick={handleImg2} className="avatar" > add </button>
+            <img id="api-img" src={link} className="static" />
             <button onClick={handleImg3} className="avatar" > add </button>
+            <img id="api-img" src={link} className="static" />
             <button onClick={handleImg4} className="avatar" > add </button>
+            
+            
+            
+            
+            
         </section>
         </>
     );

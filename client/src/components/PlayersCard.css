@@ -11,10 +11,11 @@
     
 }
 .select-profile{
-    width: 250px;
-    height: 150px;
-   
+    width: 400px;
+    height: 250px;
+   float: right;
     border: solid 1px grey;
+    
 
 }
 
@@ -29,6 +30,15 @@
 
 .card{
     display: block
+}
+
+.avatar{
+    margin-right: 2em;
+}
+
+.static{
+    width: 120px;
+    height: 60px
 }
 
 
