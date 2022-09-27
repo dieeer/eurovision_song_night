@@ -8,8 +8,8 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
     const [name, setName] = useState('');
     const [songs, setSongs] = useState([]);
 
-    const handleNameChange = (event) => setName(event.target.value)
-    const handleSongChange = (event) => setSongs(event.target.value)
+    // const handleNameChange = (event) => setName(event.target.value)
+    // const handleSongChange = (event) => setSongs(event.target.value)
 
     
     // map the data, then put the data into playlist info state 

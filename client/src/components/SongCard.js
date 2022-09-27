@@ -35,8 +35,6 @@ const SongCard = ({song}) => {
   })
 
 
-
-
   return (
     <>
     <div className='SongList'>

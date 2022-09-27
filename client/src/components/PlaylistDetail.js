@@ -48,22 +48,16 @@ const handleDeletePlaylist = () => {
 }
         
     return (
-        <div>
-            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                >
-                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                    {songData}
-                    </Typography>
-                    <Typography sx={{ color: 'text.secondary' }}><YoutubeEmbed/></Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-
-                </AccordionDetails>
-            </Accordion>
+        <div className='playlist-wrapper'>
+            {/* {playlist.name} */}
+            <form onSubmit={handleDeletePlaylist}>
+            <input type='submit' name='submit'  value='Delete Playlist' />
+            </form>
+            <br/>
+            <ol>
+                {songData}
+            </ol>
+            <br/>
 
         </div>
     )
