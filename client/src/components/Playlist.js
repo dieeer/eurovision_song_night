@@ -6,7 +6,7 @@ const Playlist = ({playlist}) => {
 
     return (
         <div className='playlist-item'>
-            <h3><Link to={playlist._id}>{playlist.name}</Link></h3>
+            <h3><Link to={playlist._id}>{playlist.name} </Link></h3>
             {/* <p>{songCount} songs</p> */}
             </div>
     )

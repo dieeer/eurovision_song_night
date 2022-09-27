@@ -3,9 +3,7 @@ import { useState, useEffect } from "react";
 import PlayersForm from "../components/PlayersForm";
 import PlayersGrid from "../components/PlayersGrid";
 import { getPlayers } from "../components/PlayersService";
-import PlayersCard from "../components/PlayersCard";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "../components/NavBar"
+
 const PlayersContainer = () => {
     const [players, setPlayers] = useState([]);
 

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // UNIVERSAL COMPONENT IMPORTS
-import Home from './containers/Home'
+import Home from './containers/HomeContainer'
 import NavBar from './components/NavBar.js'
 
 // CONTESTS IMPORTS.
@@ -26,6 +26,7 @@ import PlaylistDetail from './components/PlaylistDetail'
 // GAME IMPORT
 import Game from './components/Game'
 import PlayersContainer from './containers/PlayersContainer'
+import HomeContainer from './containers/HomeContainer'
 function App() {  
   // const based on a list of contests.
   
@@ -65,7 +66,7 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<HomeContainer/>} />
 
 
           {/* SONG ROUTES */}
@@ -75,7 +76,7 @@ function App() {
           
           {/* PLAYLIST ROUTES */}
           <Route path='/playlists'
-          element={<PlaylistsContainer playlists={playlists} />}
+          element={<PlaylistsContainer playlists={playlists}/>}
           />
           <Route path='/playlists/:id'
           element={

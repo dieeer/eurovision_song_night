@@ -32,7 +32,7 @@ const PlaylistsContainer = ({playlists}) => {
     <>
       <div className='playlist-wrapper'>
 
-      <PlaylistList playlists={playlistInfo} createPlaylist={createPlaylist} deletePlaylist={deletePlaylist}/>
+      <PlaylistList playlists={playlistInfo} createPlaylist={createPlaylist} deletePlaylist={deletePlaylist} key={playlistService._id}/>
       </div>
 
     </>
