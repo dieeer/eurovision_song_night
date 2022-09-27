@@ -17,13 +17,15 @@ const playlistService = {
     },
 
     // add song to playlist 'songs' array
-    addSongToPlaylist(playlistId, songId) {
-        return fetch(baseURL + playlistId, {
+    addSongToPlaylist(playlist, songToAdd) {
+        const updatedPlaylist = {...playlist, songs: [...playlist.songs, songToAdd]}
+        const {_id, ...updatedPlaylistWithoutId} = updatedPlaylist
+        return fetch(baseURL + _id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({songId: songId, playlistId: playlistId, songs:[].push(songId)}),
+            body: JSON.stringify(updatedPlaylistWithoutId),
         }).then((res) => res.json())
     },
 

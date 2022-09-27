@@ -3,6 +3,8 @@ import Playlist from './Playlist';
 import playlistService, {createPlaylist} from '../services/playlistService'
 import {useEffect, useState} from 'react';
 
+const {flag, code, name, countries} = require('country-emoji');
+
 const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
     const [name, setName] = useState('');
     const [songs, setSongs] = useState([]);
@@ -17,8 +19,46 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
 
 
     const playlistData = playlists.map((playlist) => {
+            // const songCount = playlists.map((playlist) => {
+            //     if (playlist.songs.length === false) {
+            //         return 0
+            //     }
+            //     return playlist.songs.length
+            // })
+
+
+    // const songForCountries = playlists.map((playlist) => {
+    //     playlist.songs.map((songs) => {
+    //         songs.map((songs) => {
+    //         return (
+    //             <li>{songs.to_country}</li>
+    //         )
+    //         })
+    //     })
+    // })
+
+    // const songForCountries = playlists.map((playlist) => {
+    //     return playlist.songs.map((songs) => {
+    //         const countryWithFlag = flag(songs.to_country)
+    //         return (
+    //             <li>{countryWithFlag}</li>
+    //         )
+    //     })
+    // })
+
+
+
+    // [["England", "Spain"], ["Amrmenia"]]
+
+
+
+
+        
+
+
+
         return (<>
-            <Playlist key={playlist._id} playlist={playlist}/>
+            <Playlist key={playlist._id} playlist={playlist} />
             <button onClick={() => deletePlaylist(playlist._id)}>delete</button>
             </>
             )
@@ -32,13 +72,7 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
 
 
 
-    // // get length of 'songs' array in each playlist
-    // const songCount = playlists.map((playlist) => {
-    //     if (playlist.songs.length === false) {
-    //         return 0
-    //     }
-    //     return playlist.songs.length
-    // })
+    // get length of 'songs' array in each playlist
 
     // Delete a playlist.
     const handleDeletePlaylist = (_id) => {
@@ -57,6 +91,8 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
 
 
 
+
+
     return (
         <>
         <div className='playlist-wrapper'>
@@ -66,11 +102,13 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
         </form>
         <ul>
         {playlistData}
+
         
         </ul>
         </div>
         </>
     )
 }
+
 
 export default PlaylistList;
