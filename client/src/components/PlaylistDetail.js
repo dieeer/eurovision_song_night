@@ -1,8 +1,6 @@
 import {useParams} from 'react-router-dom';
 import {useEffect, useState } from 'react';
 import SongCard from './SongCard';
-import SongList from './SongList';
-import {Link} from 'react-router-dom';
 import playlistService from '../services/playlistService';
 
 const PlaylistDetail = ({getPlaylistForId}) => {
@@ -35,12 +33,6 @@ const songData = singlePlaylist.songs.map((song) => {
 const handleDeletePlaylist = () => {
     playlistService.deletePlaylist(playlist._id)
 }
-
-
-
-
-
-
         
 
     return (

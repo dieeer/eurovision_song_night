@@ -34,11 +34,11 @@ const songForCountries =  playlist.songs.map((songs) => {
 
     return (
         <div className='playlist-item'>
+
             <h3><Link to={playlist._id}>{playlist.name}</Link></h3>
             <p>song count: {songCount}</p>
             <p>countries: <><ul>{songForCountries}</ul></></p>
         </div>
-
     )
 }
 

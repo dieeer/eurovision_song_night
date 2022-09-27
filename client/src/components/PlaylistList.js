@@ -1,7 +1,6 @@
 import React from 'react';
 import Playlist from './Playlist';
-import playlistService, {createPlaylist} from '../services/playlistService'
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 
 const {flag, code, name, countries} = require('country-emoji');
 
@@ -98,7 +97,7 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
         <div className='playlist-wrapper'>
         <h2>Playlists</h2>
         <form onSubmit={handleSubmit}>
-        <input type='submit' name='submit'  value='Create Playlist' />
+        <input type='submit' name='submit'  value='Create Playlist'/>
         </form>
         <ul>
         {playlistData}
