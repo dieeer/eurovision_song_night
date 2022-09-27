@@ -1,14 +1,45 @@
-img {
-    width: 100px;
-    height: 100px;
-    display: flex;
+.db-img {
+    width: 350px;
+    height: 250px;
+    display: inline;
+    border: solid 1px grey;
+    margin-top: 2em;
+    margin-bottom: 2em
 }
-button{
-    float: right;
+.db-img:hover{
+    transform: scale(1.2);
+    
+}
+.select-profile{
+    width: 400px;
+    height: 250px;
+   float: right;
+    border: solid 1px grey;
+    
 
 }
-.avatar{
+
+
+.flex {
+    display: inline;
+}
+.button{
+    display:'inline';
     float: left;
+}
+
+.card{
+    display: block
+}
+
+.avatar{
+    margin-right: 2em;
+}
+
+.static{
+    width: 120px;
+    height: 60px;
+    border: solid 1px grey;
 }
 
 
