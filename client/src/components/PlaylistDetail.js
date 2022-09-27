@@ -3,18 +3,18 @@ import {useEffect, useState } from 'react';
 import PlaylistSongCard from './PlaylistSongCard';
 import playlistService from '../services/playlistService';
 import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+// import Accordion from '@mui/material/Accordion';
+// import AccordionDetails from '@mui/material/AccordionDetails';
+// import AccordionSummary from '@mui/material/AccordionSummary';
+// import Typography from '@mui/material/Typography';
+// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export default function ControlledAccordions() {
-  const [expanded, setExpanded] = React.useState(false);
+// export default function ControlledAccordions() {
+//   const [expanded, setExpanded] = React.useState(false);
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
+//   const handleChange = (panel) => (event, isExpanded) => {
+//     setExpanded(isExpanded ? panel : false);
+//   };
 
 const PlaylistDetail = ({getPlaylistForId}) => {
     const {id} = useParams()
