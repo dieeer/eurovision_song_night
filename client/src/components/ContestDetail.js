@@ -6,17 +6,11 @@ const ContestDetail = ({ getContestForId }) => {
   const { id } = useParams()
   const singleContest = getContestForId(id)
   const [contest, setContest] = useState(singleContest)
-  const [playedGame, setPlayedGame] = useState(contest)
+ // const [playedGame, setPlayedGame] = useState(contest)
 
   return (
     <div>
-      {contest.name}
-      <br />
-      {contest.players}
-      <br />
-      {contest.playlist[0]['song']}
-
-      <Game playedGame={playedGame} />
+      <Game contest={contest} />
     </div>
   )
 }
