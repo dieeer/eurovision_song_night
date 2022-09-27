@@ -13,7 +13,6 @@ const PlaylistsContainer = ({playlists}) => {
       .then(() => {
         playlistService.getPlaylists()
           .then(data => setPlaylistInfo(data))
-    // setPlaylistInfo([...playlistInfo, newPlaylistData])
     })}   
 
     // update playlist
@@ -41,12 +40,9 @@ const PlaylistsContainer = ({playlists}) => {
   return (
     <>
       <div className='playlist-wrapper'>
-
       <PlaylistList playlists={playlistInfo} createPlaylist={createPlaylist} deletePlaylist={deletePlaylist}
         updatePlaylist={updatePlaylist} />
-      />
       </div>
-
     </>
   )
 }

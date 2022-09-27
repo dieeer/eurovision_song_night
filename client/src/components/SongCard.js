@@ -47,7 +47,7 @@ const SongCard = ({song}) => {
             <option value=''>Select Playlist</option>
             {playlistOptions}
           </select>
-          <input type='submit' value='Add to Playlist' />
+          <input type='submit' value='+' />
         </form>
     </div>
     </>

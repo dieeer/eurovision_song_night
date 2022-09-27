@@ -18,11 +18,10 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
 
 
     const playlistData = playlists.map((playlist) => {
-        return (<>
+        return (<div className='playlist-item'>
             <Playlist key={playlist._id} playlist={playlist} />
             <button onClick={() => deletePlaylist(playlist._id)}>delete</button>
-            </>
-            )
+        </div>)
         })
 
 
@@ -41,17 +40,14 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
     }
 
     return (
-        <>
         <div className='playlist-wrapper'>
-        <h2>Playlists</h2>
-        <form onSubmit={handleSubmit}>
-        <input type='submit' name='submit'  value='Create Playlist'/>
+        <h2>playlists</h2>
+        <form onSubmit={handleSubmit}> <input type='submit' name='submit'  value='Create Playlist'/>
         </form>
         <ul>
         {playlistData}
         </ul>
         </div>
-        </>
     )
 }
 

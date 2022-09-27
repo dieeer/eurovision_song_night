@@ -4,25 +4,6 @@ const {flag} = require('country-emoji');
 const Playlist = ({playlist}) => {
     const songCount = playlist.songs.length
 
-//     const playlistData = playlists.map((playlist) => {
-//         const songCount = playlists.map((playlist) => {
-//             if (playlist.songs.length === false) {
-//                 return 0
-//             }
-//             return playlist.songs.length
-//         })
-
-
-// // const songForCountries = playlists.map((playlist) => {
-// //     playlist.songs.map((songs) => {
-// //         songs.map((songs) => {
-// //         return (
-// //             <li>{songs.to_country}</li>
-// //         )
-// //         })
-// //     })
-// // })
-
 const songForCountries =  playlist.songs.map((songs) => {
         const countryWithFlag = flag(songs.to_country)
         return (
