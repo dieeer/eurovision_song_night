@@ -1,6 +1,5 @@
 import {useParams} from 'react-router-dom';
 import {useEffect, useState } from 'react';
-import PlaylistSongCard from './PlaylistSongCard';
 import playlistService from '../services/playlistService';
 import * as React from 'react';
 import PlaylistSongAccordion from './PlaylistSongAccordion';
