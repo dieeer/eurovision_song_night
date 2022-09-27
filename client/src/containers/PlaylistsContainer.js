@@ -5,9 +5,10 @@ import {useEffect, useState} from 'react';
 
 const PlaylistsContainer = ({playlists}) => {
 
+  // Set the use state of a playlist.
   const [playlistInfo, setPlaylistInfo] = useState([])
 
-  // Create a new playlist.
+  // create a new playlist
   const createPlaylist = () => {
     playlistService.createPlaylist()
       .then(() => {
@@ -25,14 +26,14 @@ const PlaylistsContainer = ({playlists}) => {
     }
 
 
-  // Deletes a playlist.
+  // deletes a playlist
   const deletePlaylist = (_id) => {
     playlistService.deletePlaylist(_id).then(() => {
       playlistService.getPlaylists().then(data => setPlaylistInfo(data))
     })
   }
   
-  // Get all the available playlists.
+  // get all available playlists
   useEffect(() => {
     playlistService.getPlaylists().then(data => setPlaylistInfo(data))}
     , [])
@@ -47,4 +48,4 @@ const PlaylistsContainer = ({playlists}) => {
   )
 }
 
-export default PlaylistsContainer
+export default PlaylistsContainer;

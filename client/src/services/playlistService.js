@@ -28,6 +28,19 @@ const playlistService = {
             body: JSON.stringify(updatedPlaylistWithoutId),
         }).then((res) => res.json())
     },
+    
+    // delete song from playlist
+        deleteSongFromPlaylist(playlist, songToDelete) {
+            const updatedPlaylist = {...playlist, songs: playlist.songs.filter((song) => song._id !== songToDelete._id)}
+            const {_id, ...updatedPlaylistWithoutId} = updatedPlaylist
+            return fetch(baseURL + _id, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedPlaylistWithoutId),
+            }).then((res) => res.json())
+        },
 
     // update playlist 
     updatePlaylist(playlist) {
@@ -45,9 +58,8 @@ const playlistService = {
 
 
 
-
-    deletePlaylist(id) {
-        return fetch(baseURL + id, {
+    deletePlaylist(playlist) {
+        return fetch(baseURL + playlist._id, {
             method: 'DELETE',
         })
     }, 

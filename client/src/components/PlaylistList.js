@@ -8,15 +8,6 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
     const [name, setName] = useState('');
     const [songs, setSongs] = useState([]);
 
-    // const handleNameChange = (event) => setName(event.target.value)
-    // const handleSongChange = (event) => setSongs(event.target.value)
-
-    
-    // map the data, then put the data into playlist info state 
-    
-    // const [playlistInfo, setPlaylistInfo] = useState(playlistService.getPlaylists())
-
-
     const playlistData = playlists.map((playlist) => {
         return (<div className='playlist-item'>
             <Playlist key={playlist._id} playlist={playlist} />
@@ -41,12 +32,14 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
 
     return (
         <div className='playlist-wrapper'>
-        <h2>playlists</h2>
-        <form onSubmit={handleSubmit}> <input type='submit' name='submit'  value='Create Playlist'/>
-        </form>
-        <ul>
-        {playlistData}
-        </ul>
+            <h2>playlists</h2>
+                <form onSubmit={handleSubmit} > 
+                    <input type='submit' name='submit'  value='Create Playlist'/>
+                </form>
+                <br/>
+            <ul>
+                {playlistData}
+            </ul>
         </div>
     )
 }
