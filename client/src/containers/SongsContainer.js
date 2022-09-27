@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+
 import SongSearchBar from '../components/SongSearchBar'
-import Filter from '../components/SongSearchBar'
 import { getAll } from '../services/EuroServices'
 import SongList from '../components/SongList'
 
-const SongsContainer = ({ playlists }) => {
+  const SongsContainer = ({ playlists }) => {
   const [SongsList, setSongsList] = useState([])
   const [filteredSongs, setFilteredSongs] = useState([])
 
@@ -14,6 +14,7 @@ const SongsContainer = ({ playlists }) => {
       setSongsList(allSongs)
     })
   }, [])
+
 
   const onSearchChange = (searchTerm) => {
     filterSongs(searchTerm)
@@ -26,6 +27,7 @@ const SongsContainer = ({ playlists }) => {
     })
     setFilteredSongs(filteredSongs)
   }
+
 
   return (
     <>

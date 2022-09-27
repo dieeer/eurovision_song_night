@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
-import SongCard from './SongCard';
-import SongList from './SongList';
+
 
   const SongSearchBar = ({ onSearchChange, songs}) => {
 
