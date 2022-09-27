@@ -26,29 +26,33 @@ import PlaylistDetail from './components/PlaylistDetail'
 // GAME IMPORT
 import Game from './components/Game'
 import PlayersContainer from './containers/PlayersContainer'
+
+// SCORECARD IMPORT
+
+import ScoreCard from './components/ScoreCard'
 import HomeContainer from './containers/HomeContainer'
 function App() {  
   // const based on a list of contests.
-  
-  const [contests, setContests] = useState([]);
-  
+
+  const [contests, setContests] = useState([])
+
   useEffect(() => {
     ContestService.getContests().then((contests) => setContests(contests))
   }, [])
-  
+
   const getContestForId = (contestId) => {
     return contests.find((contest) => contest._id === contestId)
   }
-  
+
   // const based on list of songs.
   const [songs, setSongs] = useState([])
-  
+
   useEffect(() => {
     SongService.getSongs().then((songs) => setSongs(songs))
   }, [])
-  
+
   // const based on a list of playlists.
-  const [playlists, setPlaylists] = useState([]);
+  const [playlists, setPlaylists] = useState([])
 
   useEffect(() => {
     playlistService.getPlaylists().then((playlists) => setPlaylists(playlists))
@@ -58,31 +62,28 @@ function App() {
     return playlists.find((playlist) => playlist._id === playlistId)
   }
 
-  
-
   return (
     <>
-   
       <Router>
         <NavBar />
         <Routes>
           <Route path='/' element={<HomeContainer/>} />
 
-
           {/* SONG ROUTES */}
-          <Route path='/songs' element={<SongsContainer playlists={playlists} />} />
+          <Route
+            path='/songs'
+            element={<SongsContainer playlists={playlists} />}
+          />
           {/* <Route path="/song/:id" element={<IndividualSongCard/>} /> */}
 
-          
           {/* PLAYLIST ROUTES */}
-          <Route path='/playlists'
-          element={<PlaylistsContainer playlists={playlists}/>}
+          <Route
+            path='/playlists'
+            element={<PlaylistsContainer playlists={playlists} />}
           />
-          <Route path='/playlists/:id'
-          element={
-                <PlaylistDetail getPlaylistForId={getPlaylistForId}
-              />
-            }
+          <Route
+            path='/playlists/:id'
+            element={<PlaylistDetail getPlaylistForId={getPlaylistForId} />}
           />
           <Route path='/players' element={<PlayersContainer />} />
 
@@ -93,22 +94,16 @@ function App() {
           />
           <Route
             path='/contests/:id'
-            element={
-              <ContestDetail
-                getContestForId={getContestForId}
-              />
-            }
+            element={<ContestDetail getContestForId={getContestForId} />}
           />
 
           {/* GAME ROUTES */}
           <Route
             path='/game'
-            element={
-              <Game
-                getContestForId={getContestForId}
-              />
-            }
+            element={<Game getContestForId={getContestForId} />}
           />
+          {/* SCORECARD ROUTES */}
+          <Route path='/scorecard' element={<ScoreCard />} />
         </Routes>
       </Router>
     </>
