@@ -66,6 +66,7 @@ const ScoreCard = ({ contest, currentSong, nextSong }) => {
           onChange={(e) => handleNewChange(index, e)}
         />
       </li>
+      //
     ))
   }
 
