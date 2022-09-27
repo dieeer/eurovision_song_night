@@ -2,7 +2,6 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 
 import SongSearchBar from '../components/SongSearchBar'
-import Filter from '../components/SongSearchBar'
 import { getAll } from '../services/EuroServices'
 import SongList from '../components/SongList'
 
