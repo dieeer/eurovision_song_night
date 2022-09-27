@@ -16,8 +16,13 @@ const PlaylistDetail = ({getPlaylistForId}) => {
     }, [id])
 
 
-// show details for each song in 'songs' array
-const songData = playlist.songs.map((song) => {
+// render SongCard for each object in playlist's 'songs' array
+    console.log(singlePlaylist.songs)
+
+
+
+
+const songData = singlePlaylist.songs.map((song) => {
     return (<>
         <li><SongCard key={song._id} song={song} /></li>
     </>
@@ -32,7 +37,7 @@ const handleDeletePlaylist = () => {
 
     return (
         <div className='playlist-wrapper'>
-            {playlist.name}
+            {/* {playlist.name} */}
             <form onSubmit={handleDeletePlaylist}>
             <input type='submit' name='submit'  value='Delete Playlist' />
             </form>

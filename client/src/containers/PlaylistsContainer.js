@@ -16,6 +16,16 @@ const PlaylistsContainer = ({playlists}) => {
     // setPlaylistInfo([...playlistInfo, newPlaylistData])
     })}   
 
+    // update playlist
+    const updatePlaylist = (playlistId, updatedPlaylist) => {
+      playlistService.updatePlaylist(playlistId, updatedPlaylist)
+        .then(() => {
+          playlistService.getPlaylists()
+            .then(data => setPlaylistInfo(data))
+        })
+    }
+
+
   // Deletes a playlist.
   const deletePlaylist = (_id) => {
     playlistService.deletePlaylist(_id).then(() => {
@@ -32,7 +42,9 @@ const PlaylistsContainer = ({playlists}) => {
     <>
       <div className='playlist-wrapper'>
 
-      <PlaylistList playlists={playlistInfo} createPlaylist={createPlaylist} deletePlaylist={deletePlaylist} key={playlistService._id}/>
+      <PlaylistList playlists={playlistInfo} createPlaylist={createPlaylist} deletePlaylist={deletePlaylist}
+        updatePlaylist={updatePlaylist} />
+      />
       </div>
 
     </>
