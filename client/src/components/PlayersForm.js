@@ -129,15 +129,15 @@ const PlayersForm = ({addPlayers}) => {
 
 	    </form>
             
-            <img id="api-img" src={link} className="static" />
+            <img id="api-img" src={link1} className="static" />
             <button onClick={handleImg} className="avatar" > add </button>
-            <img id="api-img" src={link} className="static" />
+            <img id="api-img" src={link2} className="static" />
             <button onClick={handleImg1} className="avatar"> add </button>
-            <img id="api-img" src={link} className="static" />
+            <img id="api-img" src={link3} className="static" />
             <button onClick={handleImg2} className="avatar" > add </button>
-            <img id="api-img" src={link} className="static" />
+            <img id="api-img" src={link4} className="static" />
             <button onClick={handleImg3} className="avatar" > add </button>
-            <img id="api-img" src={link} className="static" />
+            <img id="api-img" src={link5} className="static" />
             <button onClick={handleImg4} className="avatar" > add </button>
             
             
