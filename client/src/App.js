@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // UNIVERSAL COMPONENT IMPORTS
-import Home from './containers/Home'
+import Home from './containers/HomeContainer'
 import NavBar from './components/NavBar.js'
 
 // CONTESTS IMPORTS.
@@ -30,8 +30,8 @@ import PlayersContainer from './containers/PlayersContainer'
 // SCORECARD IMPORT
 
 import ScoreCard from './components/ScoreCard'
-
-function App() {
+import HomeContainer from './containers/HomeContainer'
+function App() {  
   // const based on a list of contests.
 
   const [contests, setContests] = useState([])
@@ -67,7 +67,7 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<HomeContainer/>} />
 
           {/* SONG ROUTES */}
           <Route

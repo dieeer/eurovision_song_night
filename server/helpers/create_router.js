@@ -17,6 +17,7 @@ const createRouter = function (collection) {
       });
   });
 
+
   router.get('/songs', (req, res) => {
     collection
       .find()
@@ -82,6 +83,7 @@ const createRouter = function (collection) {
   router.put('/:id', (req, res) => {
     const id = req.params.id;
     const updatedData = req.body;
+    console.log(updatedData)
     collection
     .updateOne(
       { _id: ObjectID(id) },
