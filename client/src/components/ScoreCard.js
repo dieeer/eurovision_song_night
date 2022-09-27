@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const ScoreCard = ({ contest, currentSong, nextSong }) => {
+const ScoreCard = ({ contest, currentSong }) => {
   const numberOfFields = contest.players.length
 
   const generateObjects = (fields) => {
@@ -42,7 +42,6 @@ const ScoreCard = ({ contest, currentSong, nextSong }) => {
   let handleSubmit = (e) => {
     e.preventDefault()
     alert(JSON.stringify(formValues))
-    nextSong()
   }
 
   const handleNewChange = (i, e) => {

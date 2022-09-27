@@ -67,7 +67,13 @@ const Game = ({ contest }) => {
       {shoudlShowPrevSongButton && (
         <button onClick={prevSong}>Prev Song</button>
       )}
-      <ScoreCard contest={contest} key={currentSong.song} currentSong={currentSong} nextSong={nextSong}/>
+     
+      <ScoreCard
+        contest={contest}
+        key={currentSong.song}
+        currentSong={currentSong}
+        nextSong={nextSong}
+      />
     </div>
   )
 }
