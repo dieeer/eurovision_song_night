@@ -3,18 +3,7 @@ import {useEffect, useState } from 'react';
 import PlaylistSongCard from './PlaylistSongCard';
 import playlistService from '../services/playlistService';
 import * as React from 'react';
-// import Accordion from '@mui/material/Accordion';
-// import AccordionDetails from '@mui/material/AccordionDetails';
-// import AccordionSummary from '@mui/material/AccordionSummary';
-// import Typography from '@mui/material/Typography';
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
-// export default function ControlledAccordions() {
-//   const [expanded, setExpanded] = React.useState(false);
-
-//   const handleChange = (panel) => (event, isExpanded) => {
-//     setExpanded(isExpanded ? panel : false);
-//   };
+import PlaylistSongAccordion from './PlaylistSongAccordion';
 
 const PlaylistDetail = ({getPlaylistForId}) => {
     const {id} = useParams()
@@ -30,14 +19,12 @@ const PlaylistDetail = ({getPlaylistForId}) => {
 
 
 // render SongCard for each object in playlist's 'songs' array
-    console.log(singlePlaylist.songs)
-
 
 
 
 const songData = singlePlaylist.songs.map((song) => {
     return (<>
-        <li><PlaylistSongCard key={song._id} song={song} /></li>
+        <li><PlaylistSongAccordion key={song._id} song={song} /></li>
     </>
     )
 })
@@ -48,8 +35,7 @@ const handleDeletePlaylist = () => {
 }
         
     return (
-        <div className='playlist-wrapper'>
-            {/* {playlist.name} */}
+        <div className='playlist-detail-wrapper'>
             <form onSubmit={handleDeletePlaylist}>
             <input type='submit' name='submit'  value='Delete Playlist' />
             </form>
@@ -57,7 +43,6 @@ const handleDeletePlaylist = () => {
             <ol>
                 {songData}
             </ol>
-            <br/>
 
         </div>
     )
