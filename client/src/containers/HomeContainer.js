@@ -2,6 +2,7 @@ import HomePage from '../components/HomePage'
 import { useState, useEffect } from 'react'
 import { getAll } from '../services/EuroServices'
 import PlaylistCard from '../components/PlaylistCard'
+import ContestCard from '../components/ContestCard'
 
 const HomeContainer = () => {
 const [homeSongsList, setHomeSongsList] = useState([])
@@ -22,6 +23,7 @@ useEffect(() => {
             <div> 
                 <HomePage randomSongs={homeSongsList} />
                 <PlaylistCard />
+                <ContestCard />
             </div>
         )
 }
