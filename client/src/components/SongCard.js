@@ -1,6 +1,8 @@
 import playlistService from '../services/playlistService'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+const {flag} = require ('country-emoji')
+
 
 const { flag } = require('country-emoji')
 const SongCard = ({ song }) => {
@@ -25,6 +27,7 @@ const SongCard = ({ song }) => {
       (playlist) => playlist._id === selectedPlaylistId
     )
     playlistService.addSongToPlaylist(selectedPlaylist, song)
+    playlistService.getPlaylists().then((playlists) => setPlaylists(playlists))
   }
 
   // set existing playlists to drop down menu
@@ -38,6 +41,7 @@ const SongCard = ({ song }) => {
   })
 
   const countryFlag = flag(song.to_country)
+
 
   return (
     <>
@@ -53,6 +57,7 @@ const SongCard = ({ song }) => {
             <span class='dash-list-text'>{song.year}</span>
           </li>
         </ul>
+
         <form onSubmit={handleSubmit}>
           <select onChange={handleSelect}>
             <option value=''>Select Playlist</option>

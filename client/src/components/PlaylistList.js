@@ -19,6 +19,7 @@ const PlaylistList = ({ playlists, deletePlaylist, createPlaylist }) => {
         </Link>
         <button onClick={() => deletePlaylist(playlist._id)}>delete</button>
       </>
+
     )
   })
 
