@@ -57,4 +57,4 @@ const ContestsContainer = ({contests}) => {
   )
 }
 
-export default ContestsContainer
+export default ContestsContainer;
