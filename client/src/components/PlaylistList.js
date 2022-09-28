@@ -1,8 +1,7 @@
 import React from 'react'
 import Playlist from './Playlist'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-    
+
 const { flag, code, name, countries } = require('country-emoji')
 
 const PlaylistList = ({ playlists, deletePlaylist, createPlaylist }) => {
@@ -11,15 +10,10 @@ const PlaylistList = ({ playlists, deletePlaylist, createPlaylist }) => {
 
   const playlistData = playlists.map((playlist) => {
     return (
-      <>
-        <Link to={playlist._id}>
-          <li class='dash-list-item'>
-            <Playlist key={playlist._id} playlist={playlist} />
-          </li>
-        </Link>
-        <button onClick={() => deletePlaylist(playlist._id)}>delete</button>
-      </>
-
+      <li className='dash-list-item'>
+        <Playlist playlist={playlist} />
+        <a onClick={() => deletePlaylist(playlist._id)}>delete</a>
+      </li>
     )
   })
 
@@ -39,16 +33,17 @@ const PlaylistList = ({ playlists, deletePlaylist, createPlaylist }) => {
   return (
     <>
       <section>
-        <h1 class='main-title'>Playlists</h1>
+        <h1 className='main-title'>Playlists</h1>
       </section>
-      <form onSubmit={handleSubmit}>
-        <input type='submit' name='submit' value='Create Playlist' />
-      </form>
-      <div class='stacked-group'>
-        <div class='stacked-playlist-list'>
-          <ul role='list' class='dash-list'>
+
+      <div className='stacked-group'>
+        <div className='stacked-playlist-list'>
+          <ul role='list' className='dash-list'>
             {playlistData}
           </ul>
+          <button onClick={handleSubmit} class='button primary'>
+            Create a new playlist
+          </button>
         </div>
       </div>
     </>
