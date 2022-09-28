@@ -1,5 +1,5 @@
 import {useState} from "react";
-import { postPlayer } from "./PlayersService";
+import { postPlayer } from "../services/PlayersService";
 import './PlayersCard.css';
 import PlayersCard from "./PlayersCard";
 const link = 'https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper.png';
