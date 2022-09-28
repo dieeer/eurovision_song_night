@@ -17,6 +17,7 @@ import ContestsContainer from './containers/ContestsContainer'
 import SongList from './components/SongList'
 import SongsContainer from './containers/SongsContainer'
 import SongService from './services/songService'
+import SongDetail from './components/SongDetail'
 
 // PLAYLISTS IMPORTS
 import playlistService from './services/playlistService'
@@ -51,12 +52,17 @@ function App() {
     SongService.getSongs().then((songs) => setSongs(songs))
   }, [])
 
+  const getSongForId = (songId) => {
+    songs.find((song) => song._id === songId)
+  }
+
   // const based on a list of playlists.
   const [playlists, setPlaylists] = useState([])
 
   useEffect(() => {
     playlistService.getPlaylists().then((playlists) => setPlaylists(playlists))
   }, [])
+
 
   const getPlaylistForId = (playlistId) => {
     return playlists.find((playlist) => playlist._id === playlistId)
@@ -72,9 +78,9 @@ function App() {
           {/* SONG ROUTES */}
           <Route
             path='/songs'
-            element={<SongsContainer playlists={playlists} />}
+            element={<SongsContainer songs={songs}/>}
           />
-          {/* <Route path="/song/:id" element={<IndividualSongCard/>} /> */}
+          <Route path="/songs/:id/" element={<SongDetail/>} />
 
           {/* PLAYLIST ROUTES */}
           <Route

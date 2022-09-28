@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import PlayersForm from "../components/PlayersForm";
 import PlayersGrid from "../components/PlayersGrid";
-import { getPlayers } from "../components/PlayersService";
+import { getPlayers } from "../services/PlayersService";
 
 
 const PlayersContainer = () => {

@@ -1,4 +1,4 @@
-import { deletePlayer} from "./PlayersService"
+import { deletePlayer} from "../services/PlayersService"
 import {useState, useEffect} from "react";
 import './PlayersCard.css'
 

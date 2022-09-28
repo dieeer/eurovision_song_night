@@ -1,4 +1,5 @@
 import playlistService from "../services/playlistService";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
@@ -35,8 +36,10 @@ const SongCard = ({song}) => {
   })
 
 
+  
   return (
     <>
+    <h3><Link to={"/songs/" + song._id}>{song.song}</Link></h3>
     <div className='SongList'>
         <h1>{song.performer}</h1>
         <p>Song: {song.song}</p>
