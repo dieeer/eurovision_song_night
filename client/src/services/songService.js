@@ -5,6 +5,10 @@ const SongService = {
     return fetch(baseURL).then((res) => res.json())
   },
 
+  getSong(id) {
+    return fetch(baseURL + id).then((res) => res.json())
+  },
+
   postSongs(payload) {
     return fetch(baseURL, {
       method: 'POST',

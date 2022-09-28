@@ -42,21 +42,15 @@ const SongCard = ({ song }) => {
   const countryFlag = flag(song.to_country)
 
 
+  
   return (
     <>
-      <h3>
-        <Link to={'/songs/' + song._id}>{song.song}</Link>
-      </h3>
-      <div className='SongList'>
-        <ul role='list' class='dash-list'>
-          <li class='dash-list-item'>
-            <span class='dash-list-text country-emoji'>{countryFlag}</span>
-            <span class='dash-list-text'>{song.song}</span>
-            <span class='dash-list-text'>{song.performer}</span>
-            <span class='dash-list-text'>{song.year}</span>
-          </li>
-        </ul>
-
+    <h3><Link to={"/songs/" + song._id}>{song.song}</Link></h3>
+    <div className='SongList'>
+        <h1>{song.performer}</h1>
+        <p>Song: {song.song}</p>
+        <p>Composers: {song.composers}</p>
+        <p>Year: {song.year}</p>
         <form onSubmit={handleSubmit}>
           <select onChange={handleSelect}>
             <option value=''>Select Playlist</option>
