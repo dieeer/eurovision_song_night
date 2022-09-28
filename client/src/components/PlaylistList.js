@@ -31,12 +31,13 @@ const PlaylistList = ({playlists, deletePlaylist, createPlaylist}) => {
     }
 
     return (
-        <div className='playlist-wrapper'>
+        <div 
+        className='playlist-wrapper'>
             <h2>playlists</h2>
                 <form onSubmit={handleSubmit} > 
                     <input type='submit' name='submit'  value='Create Playlist'/>
                 </form>
-                <br/>
+        <br/>
             <ul>
                 {playlistData}
             </ul>

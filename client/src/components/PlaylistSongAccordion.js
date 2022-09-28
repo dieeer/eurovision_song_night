@@ -5,7 +5,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import YoutubeEmbed from './YoutubeEmbed';
 
-export default function ControlledAccordions({song}) {
+export default function ControlledAccordions({song, deleteSongFromPlaylist}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -17,6 +17,11 @@ export default function ControlledAccordions({song}) {
   const flagForCountry = flag(song.to_country)
 
   return (
+    <div>
+    <div style={{ width: '25%'}}>song</div>
+    <div style={{ width: '25%'}}>country</div>
+    <div style={{ width: '25%'}}>artist</div>
+    <div style={{ width: '25%'}}>year</div>
     <div>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
@@ -30,7 +35,7 @@ export default function ControlledAccordions({song}) {
           {flagForCountry}
           </Typography>
           <Typography sx={{ color: 'text.secondary', width: '30%' }}>{song.performer}</Typography>
-          <Typography sx={{ width: '20%', align: 'right' }}>{song.year}</Typography>
+          <Typography sx={{ width: '15%', align: 'right' }}>{song.year}</Typography><Typography sx={{ width: '5%', align: 'right' }}><form onSubmit={deleteSongFromPlaylist}><input type='submit'/></form></Typography>
         </AccordionSummary>
         <AccordionDetails>   
 
@@ -38,6 +43,7 @@ export default function ControlledAccordions({song}) {
 
         </AccordionDetails>
       </Accordion>
+    </div>
     </div>
   );
 }
