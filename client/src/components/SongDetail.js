@@ -2,12 +2,13 @@ import YoutubeEmbed from "./YoutubeEmbed";
 import { useState, useEffect } from 'react'
 import * as React from 'react';
 import {useParams} from 'react-router-dom';
-
+import nl2br from 'react-newline-to-break';
 
 const SongDetail = ({}) => {
 
 
     const [song, setSong] = useState({})
+    const [SongLyrics, setSongLyrics] = useState("")
 
     const {id} = useParams()
 
@@ -16,16 +17,25 @@ const SongDetail = ({}) => {
         const url = `http://localhost:9000/api/all/${id}`;
         fetch(url)
         .then(res => res.json())
-        .then(data => setSong(data))
+        .then(data => {
+            setSong(data)
+            console.log(data.lyrics)
+            const splittedLryics = data.lyrics.split("\\n")
+            const spacedJsxLryics = splittedLryics.map((string) => {
+                return (
+                <>
+                <br/>
+                    {string}
+                </>
+                )
+            })
+            setSongLyrics(spacedJsxLryics)
+        })
     }, [id])
-
-
-
+    
     return (
         <>
         <div className='SongList'>
-
-            {/* <YoutubeEmbed url={song.youtube_url} /> */}
 
             <p>Song: {song.song}</p>
             <p>Country: {song.to_country}</p>
@@ -50,8 +60,7 @@ const SongDetail = ({}) => {
 
      
             <h1>Lyrics</h1>
-            <p>{song.lyrics}</p>
-
+            <p>{SongLyrics ? SongLyrics  : "Fuck"}</p>
         </div>
         </>
     )

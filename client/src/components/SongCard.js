@@ -53,6 +53,7 @@ const SongCard = ({ song }) => {
 
   return (
     <>
+
       <div className='SongList'>
         <Link to={'/songs/' + song._id}>
           <h1>
@@ -62,6 +63,7 @@ const SongCard = ({ song }) => {
         </Link>
         <p>{song.performer}</p>
         <p>{song.year}</p>
+
       </div>
     </>
   )

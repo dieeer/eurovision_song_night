@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@mui/material": "^5.10.6"
+    "@mui/material": "^5.10.6",
+    "react-newline-to-break": "^1.0.6"
   }
 }

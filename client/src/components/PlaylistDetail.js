@@ -3,6 +3,7 @@ import {useEffect, useState } from 'react';
 import playlistService from '../services/playlistService';
 import * as React from 'react';
 import PlaylistSongAccordion from './PlaylistSongAccordion';
+import PlaylistList from './PlaylistHomeList';
 
 const PlaylistDetail = ({getPlaylistForId}) => {
     const {id} = useParams()
@@ -46,6 +47,7 @@ const songData = singlePlaylist.songs.map((song) => {
     )
 })
 
+
 // delete playlist button
 const handleDeletePlaylist = () => {
     playlistService.deletePlaylist(playlist._id)
@@ -53,9 +55,12 @@ const handleDeletePlaylist = () => {
         
     return (
         <div className='playlist-detail-wrapper'>
-            <form onSubmit={handleDeletePlaylist}>
+            {/* <form onSubmit={handleDeletePlaylist}>
             <input type='submit' name='submit'  value='Delete Playlist' />
-            </form>
+            </form> */}
+            <button onClick={handleDeletePlaylist} class='button primary'>
+                    Delete This Playlist
+            </button>
             <br/>
             <ol>
                 {songData}
