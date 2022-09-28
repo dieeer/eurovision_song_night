@@ -144,6 +144,7 @@ section {
 .main-title {
   color: #24676e;
   padding-bottom: 20px;
+  text-align:center;
 }
 
 .header-container {
@@ -284,6 +285,11 @@ section {
   width: 100%;
 }
 
+.country-name {
+  font-size: 1.2em;
+  color: #24676e;
+}
+
 .button {
   border-radius: 4px;
   border-style: none;
@@ -330,7 +336,7 @@ section {
 }
 
 .right {
-  float: right;
+ float: right !important;
 }
 
 .icon {
