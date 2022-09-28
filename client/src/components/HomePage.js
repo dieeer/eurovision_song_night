@@ -1,17 +1,9 @@
-import SongCard from "./SongCard";
+import SongCard from './SongCard'
 
-    const HomePage = ({randomSongs}) => { 
-    
+const HomePage = ({ randomSongs }) => {
+  return randomSongs
+    .slice(0, 5)
+    .map((randomSongs) => <SongCard song={randomSongs} />)
+}
 
-
-    console.log("HOMEPAGE_RANDOMSONGS", randomSongs)
-
-
-        return (    
-            randomSongs.slice(0, 5).map((randomSongs) => (
-              <SongCard song={randomSongs} />
-            ))
-        )
-    }
-
-  export default HomePage;
+export default HomePage
