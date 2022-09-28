@@ -2,8 +2,8 @@ import YoutubeEmbed from "./YoutubeEmbed";
 import { useState, useEffect } from 'react'
 import * as React from 'react';
 import {useParams} from 'react-router-dom';
-const { flag } = require('country-emoji')
 
+const { flag } = require('country-emoji')
 const SongDetail = ({}) => {
 
 

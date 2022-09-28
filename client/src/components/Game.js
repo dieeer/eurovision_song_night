@@ -8,10 +8,10 @@ const Game = ({ contest }) => {
   const [counterState, setCounterState] = useState(0)
   // const [button, setButton] = useState(true)
   const [currentSongState, setCurrentSongState] = useState(
-    contest.playlist[counterState]
+    contest.playlist.songs[counterState]
   )
 
-  const playListLength = contest.playlist.length
+  const playListLength = contest.playlist.songs.length
   // const playListLength = playListArray.length
 
   //let counter = 0
@@ -55,7 +55,7 @@ const Game = ({ contest }) => {
   // }
 
   const shoudShowNextSongButton = counterState + 1 < playListLength
-  const currentSong = contest.playlist[counterState]
+  const currentSong = contest.playlist.songs[counterState]
   const shoudlShowPrevSongButton = Boolean(counterState)
 
   return (
