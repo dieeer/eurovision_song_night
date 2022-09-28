@@ -27,6 +27,7 @@ const PlaylistList = ({ playlists, deletePlaylist, createPlaylist }) => {
     deletePlaylist(playlists._id)
   }
 
+  
   // handleSubmit so that page does not need to refresh to see new playlist
   const handleSubmit = (event) => {
     event.preventDefault()

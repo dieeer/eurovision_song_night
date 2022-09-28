@@ -53,7 +53,7 @@ const playlistService = {
         }).then((res) => res.json())
     },
     
-
+    // Delete a playlist.
     deletePlaylist(id) {
         return fetch(baseURL + id, {
             method: 'DELETE',
