@@ -51,7 +51,7 @@ const songData = singlePlaylist.songs.map((song) => {
 // delete playlist button
 const handleDeletePlaylist = () => {
     playlistService.deletePlaylist(playlist._id)
-    window.open("http://localhost:3000/playlists")
+    window.location.href = "http://localhost:3000/playlists"
 }
         
     return (
