@@ -26,7 +26,10 @@ import AutocompleteSearchbar from '../components/AutocompleteSearchbar'
 
   return (
     <>
+    <section>
+        <h1 className="main-title">Songs</h1>
       <AutocompleteSearchbar songs={songs}/>
+      </section>
     </>
   )
 }
