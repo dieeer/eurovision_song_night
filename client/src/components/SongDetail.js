@@ -2,19 +2,22 @@ import YoutubeEmbed from "./YoutubeEmbed";
 import { useState, useEffect } from 'react'
 import * as React from 'react';
 import {useParams} from 'react-router-dom';
-
+import playlistService from '../services/playlistService'
 const { flag } = require('country-emoji')
+
 const SongDetail = ({}) => {
 
 
     const [song, setSong] = useState({})
+   const [playlists, setPlaylists] = useState([])
+   const [selectedPlaylistId, setSelectedPlaylistId] = useState('')
+   const [playlist, setPlaylist] = useState({})
     const [SongLyrics, setSongLyrics] = useState("")
     const [youtubeUrl, setYouTubeUrl] = useState('song.youtube_url')
 
     const {id} = useParams()
 
     useEffect(() => {
-        console.log(id)
         const url = `http://localhost:9000/api/all/${id}`;
         fetch(url)
         .then(res => res.json())
@@ -34,6 +37,34 @@ const SongDetail = ({}) => {
         })
     }, [id])
 
+    useEffect(() => {
+      playlistService.getPlaylists().then((data) => setPlaylists(data))
+    }, [])
+
+     const handleSelect = (e) => {
+       console.log('This is the value of the playlist option: ', e.target.value)
+       setSelectedPlaylistId(e.target.value)
+     }
+
+     const handleSubmit = (e) => {
+       e.preventDefault()
+       const selectedPlaylist = playlists.find(
+         (playlist) => playlist._id === selectedPlaylistId
+       )
+       playlistService.addSongToPlaylist(selectedPlaylist, song)
+       playlistService
+         .getPlaylists()
+         .then((playlists) => setPlaylists(playlists))
+     }
+
+      const playlistOptions = playlists.map((playlist) => {
+        return (
+          <option key={playlist._id} value={playlist._id}>
+            {playlist.name}
+          </option>
+        )
+      })
+
      const countryFlag = flag(song.to_country)
     
     return (
@@ -51,6 +82,14 @@ const SongDetail = ({}) => {
           <div className='stacked-group'>
             <div className='stacked-playlist-list'>
               <YoutubeEmbed url={youtubeUrl} />
+
+              <form onSubmit={handleSubmit}>
+                <select onChange={handleSelect}>
+                <option value=''>Select Playlist</option>
+                  {playlistOptions}
+                </select>
+                <input type='submit' value='+' />
+              </form>
 
               <button className='button primary padding right'>
                 Add to playlist

@@ -1,15 +1,25 @@
 import React, { useState, useEffect } from 'react'
+import scoreService from '../services/scoreService'
 
 const ScoreCard = ({ contest, currentSong }) => {
-  const numberOfFields = contest.players.length
+  const [scores, setScores] = useState([])
+
+  useEffect(() => {
+    scoreService.getScores().then((scores) => {
+      setScores(scores)
+    })
+  }, [])
+  console.log(scores)
+
+  //const numberOfFields = scores.scores.length
 
   const generateObjects = (fields) => {
     return Array.from({ length: fields }, (element, index) => ({
-      song: currentSong.song,
-      person: contest.players[index],
+     // song: currentSong.song,
+     // person: contest.players[index],
     }))
   }
-  const [formValues, setFormValues] = useState(generateObjects(numberOfFields))
+  const [formValues, setFormValues] = useState(generateObjects(5))
 
   //   useEffect(() => {
   //     setFormValues(generateObjects(numberOfFields))
@@ -71,7 +81,7 @@ const ScoreCard = ({ contest, currentSong }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {generateFields(numberOfFields)}
+      {generateFields(5)}
       <div className='button-section'>
         <button className='button submit' type='submit'>
           Submit
