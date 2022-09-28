@@ -36,6 +36,7 @@ const CreateContest = () => {
         )
         contestService.createContest(contest, selectedPlaylist)
         contestService.getContests().then((contests) => setContests(contests))
+        window.location.href = 'http://localhost:3000/contests'
     }
 
     const handleChange = (e) => {
