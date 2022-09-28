@@ -21,14 +21,11 @@ const SongDetail = ({}) => {
 
 
 
-    const youTube = song.youtube_url;
-
-
-
     return (
         <>
         <div className='SongList'>
 
+            <YoutubeEmbed url={song.youtube_url} />
 
             <p>Song: {song.song}</p>
             <p>Country: {song.to_country}</p>
