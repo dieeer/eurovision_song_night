@@ -8,30 +8,26 @@ const link2 = 'https://w7.pngwing.com/pngs/861/742/png-transparent-fifa-18-just-
 const link3 = 'https://e7.pngegg.com/pngimages/446/646/png-clipart-saitama-illustration-one-punch-man-saitama-manga-sticker-one-punch-man-white-child.png';
 const link4 = 'https://w7.pngwing.com/pngs/488/1002/png-transparent-laughter-why-do-we-laugh-humour-joke-white-house-white-house-face-head-united-states.png';
 const link5 = "https://e7.pngegg.com/pngimages/225/208/png-clipart-chin-man-glasses-emotion-beard-man-face-people.png"
+const link6 = 'https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/300372581_371952665141695_8797064267575780247_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=e3f864&_nc_ohc=j3OXkXhOePcAX-n4pAd&_nc_ht=scontent-man2-1.xx&oh=00_AT90ZS880X945Hs5DKf3Dw9Ofn0BQcuUjtP6SpMLFEv6Aw&oe=63384220'
+const link7 = "https://wallpaperaccess.com/full/7053062.jpg";
+const link8 = "https://wallpaperaccess.com/full/3871478.jpg";
+const link9 = "https://www.irishexaminer.com/cms_media/module_img/2847/1423988_1_articlelarge_ie-332363_c9ec5e88f00e43fe8a8492f75b2b3dd2.jpg";
+const link10 = "https://wallpaperaccess.com/full/39612.jpg";
+const link11 = "https://escxtra.com/wp-content/uploads/ESC-2021-Logotipo-780x470.jpg";
+const link12 = 'https://dk135eecbplh9.cloudfront.net/assets/blt0fa990a7507d7a41/Loading-Screen-Animation.png'
 const PlayersForm = ({addPlayers}) => {
 
 
 
-    // some state to hold all links (array)
-    // some state to hold current index
-    // on click increment index
-    // if we're on the last index set to first
-    // update the form data
-    // display the right images
+
     
     const [formData, setFormData] = useState({
 
         name: "",
-        age: "",
-        sex: "",
-        img: link,
+        img: link6,
+        background:link12
         
     })
-
-
-    // const [button, setButton] = useState(link)
-    // const [button1, setButton1] = useState(link1)
-    // const [button2, setButton2] = useState(link2)
 
 
     const onChange = (e) =>{
@@ -45,39 +41,76 @@ const PlayersForm = ({addPlayers}) => {
         postPlayer(formData).then((data)=>{
             addPlayers(data);
             
+            setFormData({
+                name: "",
+                img: link6,
+                background:link12
+            });
+
+            
         })
     }
         
-        const handleImg = () =>{
-            setFormData({       
-               ...formData,
-                img: link1
-            });
-        }
-        const handleImg1 = () =>{
+    const handleImg = () =>{
+        setFormData({       
+           ...formData,
+            img: link1
+        });
+    }
+    const handleImg1 = () =>{
+        setFormData({       
+            ...formData,
+            img: link2
+        });
+    }
+    const handleImg2 = () =>{
+        setFormData({       
+            ...formData,
+            img: link3
+        });
+
+    }
+
+        const handleImg3 = () =>{
             setFormData({       
                 ...formData,
-                img: link2
+                img: link4
             });
         }
-        const handleImg2 = () =>{
+        const handleImg4 = () =>{
             setFormData({       
                 ...formData,
-                img: link3
+                img: link5
             });
-
         }
-
-            const handleImg3 = () =>{
+            const background = () =>{
                 setFormData({       
-                    ...formData,
-                    img: link4
+                   ...formData,
+                   background: link7
                 });
             }
-            const handleImg4 = () =>{
+            const background1 = () =>{
                 setFormData({       
-                    ...formData,
-                    img: link5
+                   ...formData,
+                   background: link8
+                });
+            }
+            const background2 = () =>{
+                setFormData({       
+                   ...formData,
+                   background: link9
+                });
+            }
+            const background3 = () =>{
+                setFormData({       
+                   ...formData,
+                   background: link10
+                });
+            }
+            const background4 = () =>{
+                setFormData({       
+                   ...formData,
+                   background: link11
                 });
             }
         
@@ -87,48 +120,16 @@ const PlayersForm = ({addPlayers}) => {
 
 
 
-
     return (
         <>
         
         <section>
+        
         <img id="api-img" src={formData.img}  className="select-profile"/>
-        <form onSubmit={onSubmit} id="players-form" >
-            <h2>Add Players Here!</h2>
-            <div className="formWrap">
-                <label htmlFor="name">Name:</label>
-                <input 
-                    onChange={onChange} 
-                    type="text" 
-                    id="name" 
-                    name="name"
-                    value={formData.name} className="field"/>
-            </div>
-            <div className="field">
-                <label htmlFor="location">Age:</label>
-                <input 
-                    onChange={onChange} 
-                    type="text" 
-                    id="age" 
-                    name="age"
-                    value={formData.age} />
-            </div>
-            <div className="field">
-                <label htmlFor="date">Sex:</label>
-                <input 
-                    onChange={onChange} 
-                    type="text" 
-                    id="sex" 
-                    name="sex" 
-                    value={formData.sex} className="field"/>
-            </div>
+        <img id="api-img" src={formData.background}  className="select-background" />
+        
 
-
-            
-            <input type="submit" value="Add Player" id="save"/>
-
-	    </form>
-            
+        <h2>Add you're avatar!</h2>
             <img id="api-img" src={link1} className="static" />
             <button onClick={handleImg} className="avatar" > add </button>
             <img id="api-img" src={link2} className="static" />
@@ -139,11 +140,37 @@ const PlayersForm = ({addPlayers}) => {
             <button onClick={handleImg3} className="avatar" > add </button>
             <img id="api-img" src={link5} className="static" />
             <button onClick={handleImg4} className="avatar" > add </button>
-            
-            
-            
-            
-            
+
+            <h2>Choose you're player theme!</h2>
+            <img id="api-img" src={link7} className="static" />
+            <button onClick={background} className="avatar" > add </button>
+            <img id="api-img" src={link8} className="static" />
+            <button onClick={background1} className="avatar"> add </button>
+            <img id="api-img" src={link9} className="static" />
+            <button onClick={background2} className="avatar" > add </button>
+            <img id="api-img" src={link10} className="static" />
+            <button onClick={background3} className="avatar" > add </button>
+            <img id="api-img" src={link11} className="static" />
+            <button onClick={background4} className="avatar" > add </button>
+            <form onSubmit={onSubmit} id="players-form" >
+            <h2>Add Players Here!</h2>
+            <div className="formWrap">
+                <label htmlFor="name">Name:</label>
+                <input 
+                    onChange={onChange} 
+                    type="text" 
+                    id="name" 
+                    name="name"
+                    value={formData.name} className="field"/>
+            </div>
+
+     
+
+
+    
+            <input type="submit" value="Add Player" id="save"/>
+	    </form>
+        
         </section>
         </>
     );
