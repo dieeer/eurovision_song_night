@@ -1,6 +1,7 @@
 import React from 'react'
 import Contest from './Contest'
 import { useState } from 'react'
+import CreateContest from './CreateContest'
 
 const ContestList = ({contests, createContest, deleteContest, updateContestd}) => {
   const [name, setName] = useState('')
@@ -17,24 +18,15 @@ const ContestList = ({contests, createContest, deleteContest, updateContestd}) =
         )
     })
 
-    const handleSubmit = (event) => { 
-        event.preventDefault();
-        createContest(name, playlist);
-        setName('');
-        setPlaylist('');
-    }
-
-    const handleDeleteContest = (_id) => {
-        deleteContest(contests._id)
-    } 
 
   return (
     <div 
     className="contest-wrapper">
         <h2>Contests</h2>
-        <form onSubmit={handleSubmit} >
+        <CreateContest createContest={createContest}/>
+        {/* <form onSubmit={handleSubmit} >
             <input type='submit' name='submit'  value='Create Contest'/>
-        </form>
+        </form> */}
         <br/>
     {contestData}
     </div>

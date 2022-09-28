@@ -5,7 +5,6 @@ import {useParams} from 'react-router-dom';
 import playlistService from '../services/playlistService'
 const { flag } = require('country-emoji')
 
-
 const SongDetail = ({}) => {
 
 

@@ -11,7 +11,7 @@ const ContestDetail = ({ getContestForId }) => {
   return (
     <div>
     {singleContest ? <Contest contest={singleContest} /> : <p>loading...</p>}
-      {/* <Game contest={contest} /> */}
+      {/* <Game contest={singleContest}/> */}
     </div>
   )
 }
