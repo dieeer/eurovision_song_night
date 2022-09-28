@@ -16,14 +16,32 @@ const PlaylistDetail = ({getPlaylistForId}) => {
         .then(data => setPlaylist(data))
     }, [id])
 
+    useEffect(() => {
+        setPlaylist(singlePlaylist)
+    }, [singlePlaylist])
+    
 
-// render SongCard for each object in playlist's 'songs' array
+
+    // delete song from playlist
+
+    const deleteSongFromPlaylist = (songToDelete) => {
+        const updatedPlaylist = {...playlist, songs: playlist.songs.filter((song) => song._id !== songToDelete._id)}
+        const {_id, ...updatedPlaylistWithoutId} = updatedPlaylist
+        return fetch(`http://localhost:9000/api/playlists/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedPlaylistWithoutId),
+        }).then((res) => res.json())
+    }
+
 
 
 
 const songData = singlePlaylist.songs.map((song) => {
     return (<>
-        <li><PlaylistSongAccordion key={song._id} song={song} /></li>
+        <li><PlaylistSongAccordion key={song._id} song={song}/></li>
     </>
     )
 })

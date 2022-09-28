@@ -1,30 +1,23 @@
-import {Link} from 'react-router-dom';
-const {flag} = require('country-emoji');
+import { Link } from 'react-router-dom'
+const { flag } = require('country-emoji')
 
-const Playlist = ({playlist}) => {
-    const songCount = playlist.songs.length
+const Playlist = ({ playlist }) => {
+  const songCount = playlist.songs.length
 
-const songForCountries =  playlist.songs.map((songs) => {
-        const countryWithFlag = flag(songs.to_country)
-        return (
-            <li>{countryWithFlag}</li>
-        )
-    })
+  const songForCountries = playlist.songs.map((songs) => {
+    const countryWithFlag = flag(songs.to_country)
+    return countryWithFlag
+  })
 
-
-
-    return (
-        <div className='playlist-item'>
-
-            <h3><Link to={playlist._id}>{playlist.name}</Link></h3>
-            <p>song count: {songCount}</p>
-            <p>countries: <><ul>{songForCountries}</ul></></p>
-        </div>
-    )
+  return (
+    <>
+      <Link to={playlist._id} key={playlist._id}>
+        <span className='playlist-list-text'>{playlist.name}</span>
+      </Link>
+      <span className='playlist-list-text'>song count: {songCount}</span>
+      <span className='playlist-list-text'>countries: {songForCountries}</span>
+    </>
+  )
 }
 
-
-
-
-
-export default Playlist;
+export default Playlist

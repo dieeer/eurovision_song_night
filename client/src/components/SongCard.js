@@ -1,9 +1,10 @@
-import playlistService from "../services/playlistService";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import playlistService from '../services/playlistService'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+const {flag} = require ('country-emoji')
 
 
-const SongCard = ({song}) => {
+const SongCard = ({ song }) => {
   // drop down menu to push song object to playlist 'songs' array
   const [playlists, setPlaylists] = useState([])
   const [selectedPlaylistId, setSelectedPlaylistId] = useState('')
@@ -15,17 +16,20 @@ const SongCard = ({song}) => {
   }, [])
 
   const handleSelect = (e) => {
-    console.log("This is the value of the playlist option: ", e.target.value)
+    console.log('This is the value of the playlist option: ', e.target.value)
     setSelectedPlaylistId(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const selectedPlaylist = playlists.find((playlist) => playlist._id === selectedPlaylistId)
+    const selectedPlaylist = playlists.find(
+      (playlist) => playlist._id === selectedPlaylistId
+    )
     playlistService.addSongToPlaylist(selectedPlaylist, song)
+    playlistService.getPlaylists().then((playlists) => setPlaylists(playlists))
   }
 
-// set existing playlists to drop down menu
+  // set existing playlists to drop down menu
 
   const playlistOptions = playlists.map((playlist) => {
     return (
@@ -34,6 +38,8 @@ const SongCard = ({song}) => {
       </option>
     )
   })
+
+  const countryFlag = flag(song.to_country)
 
 
   
@@ -52,8 +58,9 @@ const SongCard = ({song}) => {
           </select>
           <input type='submit' value='+' />
         </form>
-    </div>
+      </div>
     </>
-)};
+  )
+}
 
-export default SongCard;
+export default SongCard
