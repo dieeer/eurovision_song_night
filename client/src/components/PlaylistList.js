@@ -8,9 +8,9 @@ const PlaylistList = ({ playlists, deletePlaylist, createPlaylist }) => {
   const [name, setName] = useState('')
   const [songs, setSongs] = useState([])
 
-  const playlistData = playlists.map((playlist) => {
+  const playlistData = playlists.map((playlist, index) => {
     return (
-      <li className='dash-list-item'>
+      <li className='dash-list-item' key={index}>
         <Playlist playlist={playlist} />
         <a onClick={() => deletePlaylist(playlist._id)}>delete</a>
       </li>

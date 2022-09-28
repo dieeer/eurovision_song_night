@@ -174,7 +174,7 @@ section {
 }
 
 .stacked-list {
-  width: 300px;
+  width: 400px;
   background-color: #f9fafb;
   margin: 20px;
   padding: 20px;
@@ -231,7 +231,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .video-caption-container {
@@ -242,8 +242,7 @@ section {
 }
 
 .dash-list-song-item {
-  display: unset;
-  padding: 10px;
+  padding: 5px;
 }
 
 .dash-list-item:hover {
@@ -256,7 +255,7 @@ section {
 
 .dash-list-text {
   padding: 10px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .playlist-list-text {
   padding: 10px;

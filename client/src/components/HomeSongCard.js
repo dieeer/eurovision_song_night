@@ -43,12 +43,12 @@ const HomeSongCard = ({ song }) => {
   return (
     <>
       <Link to={'/songs/' + song._id}>
-        <span class='dash-list-text'>{song.song}</span>
+        <span className='dash-list-text'>{song.song}</span>
       </Link>
 
-      <span class='dash-list-text country-emoji'>{countryFlag}</span>
-      <span class='dash-list-text'>{song.performer}</span>
-      <span class='dash-list-text'>Year: {song.year}</span>
+      <span className='dash-list-text country-emoji'>{countryFlag}</span>
+      <span className='dash-list-text'>{song.performer}</span>
+      <span className='dash-list-text'>Year: {song.year}</span>
     </>
   )
 }

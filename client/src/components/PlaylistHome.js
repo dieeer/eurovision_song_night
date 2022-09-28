@@ -13,9 +13,9 @@ const songForCountries =  playlist.songs.map((songs) => {
 
     return (
       <>
-        <span className='dash-list-text'>Name: {playlist.name}</span>
+        <span className='dash-list-text'>{playlist.name}</span>
+        <span className='dash-list-text'>{songForCountries}</span>
         <span className='dash-list-text'>songs: {songCount}</span>
-        <span className='dash-list-text'>countries:{songForCountries}</span>
       </>
     )
 }

@@ -28,7 +28,7 @@ const HomeContainer = () => {
       <div className='stacked-group'>
         <div className='stacked-list'>
           <h4 className='stacked-group-title'>Songs</h4>
-          <ul role='list' class='dash-list'>
+          <ul role='list' className='dash-list'>
             <HomeSongList randomSongs={homeSongsList} />
           </ul>
           <Link to='/songs' className='button primary dash'>

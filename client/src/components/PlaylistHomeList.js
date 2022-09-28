@@ -17,6 +17,7 @@ const PlaylistList = ({ playlists, deletePlaylist, createPlaylist }) => {
           <PlaylistHome key={playlist._id} playlist={playlist} />
           {/* <button onClick={() => deletePlaylist(playlist._id)}>delete</button> */}
         </li>
+        <hr />
       </Link>
     )
   })
