@@ -2,8 +2,6 @@ import YoutubeEmbed from "./YoutubeEmbed";
 import { useState, useEffect } from 'react'
 import * as React from 'react';
 import {useParams} from 'react-router-dom';
-import nl2br from 'react-newline-to-break';
-
 const SongDetail = ({}) => {
 
 
