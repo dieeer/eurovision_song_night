@@ -5,14 +5,21 @@ const contestService = {
     return fetch(baseURL).then((res) => res.json())
   },
 
-  createContest(payload) {
+  // create new contest with text input for name and drop down for chosen playlist
+
+  createContest(contest, playlist) {
     return fetch(baseURL, {
       method: 'POST',
-      body: JSON.stringify(payload),
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: prompt('Enter a name for your contest'), playlistId: ''}),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({name: contest.name, playlist: playlist}),
     }).then((res) => res.json())
   },
+
+
+
+
 
   updateContest(contest) {
     return fetch(baseURL + contest._id, {
