@@ -25,18 +25,21 @@ const PlaylistDetail = ({getPlaylistForId}) => {
 
     // delete song from playlist
 
-    const deleteSongFromPlaylist = (songToDelete) => {
-        const updatedPlaylist = {...playlist, songs: playlist.songs.filter((song) => song._id !== songToDelete._id)}
-        const {_id, ...updatedPlaylistWithoutId} = updatedPlaylist
-        return fetch(`http://localhost:9000/api/playlists/${_id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(updatedPlaylistWithoutId),
-        }).then((res) => res.json())
-    }
+    // const deleteSongFromPlaylist = (songToDelete) => {
+    //     const updatedPlaylist = {...playlist, songs: playlist.songs.filter((song) => song._id !== songToDelete._id)}
+    //     const {_id, ...updatedPlaylistWithoutId} = updatedPlaylist
+    //     return fetch(`http://localhost:9000/api/playlists/${_id}`, {
+    //         method: 'PUT',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify(updatedPlaylistWithoutId),
+    //     }).then((res) => res.json())
+    // }
 
+    // const handleDeleteSongFromPlaylist = (_id) => {
+    //     deletePlaylist(playlists.song._id)
+    //   }
 
 
 
@@ -56,9 +59,6 @@ const handleDeletePlaylist = () => {
         
     return (
         <div className='playlist-detail-wrapper'>
-            {/* <form onSubmit={handleDeletePlaylist}>
-            <input type='submit' name='submit'  value='Delete Playlist' />
-            </form> */}
             <button onClick={handleDeletePlaylist} class='button primary'>
                     Delete This Playlist
             </button>

@@ -4,8 +4,10 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import YoutubeEmbed from './YoutubeEmbed';
+import playlistService from '../services/playlistService';
 
-export default function ControlledAccordions({song, deleteSongFromPlaylist}) {
+
+export default function ControlledAccordions({song, playlists}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -15,6 +17,11 @@ export default function ControlledAccordions({song, deleteSongFromPlaylist}) {
   const {flag} = require('country-emoji');
 
   const flagForCountry = flag(song.to_country)
+
+  const handleDeleteSongFromPlaylist = (_id) => {
+    playlistService.deleteSongFromPlaylist(playlists.song._id)
+    window.location.reload(true)
+  }
 
   return (
     <div>
@@ -35,9 +42,11 @@ export default function ControlledAccordions({song, deleteSongFromPlaylist}) {
           {flagForCountry}
           </Typography>
           <Typography sx={{ color: 'text.secondary', width: '30%' }}>{song.performer}</Typography>
-          <Typography sx={{ width: '15%', align: 'right' }}>{song.year}</Typography><Typography sx={{ width: '5%', align: 'right' }}><form onSubmit={deleteSongFromPlaylist}><input type='submit'/></form></Typography>
+          <Typography sx={{ width: '15%', align: 'right' }}>{song.year}</Typography><Typography sx={{ width: '5%', align: 'right' }}><form onSubmit={handleDeleteSongFromPlaylist}><input type='submit'/></form></Typography>
         </AccordionSummary>
         <AccordionDetails>   
+
+        
 
        <YoutubeEmbed url={song.youtube_url} />
 
