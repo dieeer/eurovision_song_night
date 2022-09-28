@@ -30,7 +30,7 @@ import PlayersContainer from './containers/PlayersContainer'
 
 // SCORECARD IMPORT
 
-import ScoreCard from './components/ScoreCard'
+import ScoreContainer from './containers/ScoreContainer'
 import HomeContainer from './containers/HomeContainer'
 function App() {
   // const based on a list of contests.
@@ -106,7 +106,7 @@ function App() {
             element={<Game getContestForId={getContestForId} />}
           />
           {/* SCORECARD ROUTES */}
-          <Route path='/scorecard' element={<ScoreCard />} />
+          <Route path='/scorecard' element={<ScoreContainer />} />
         </Routes>
       </Router>
       <footer>
