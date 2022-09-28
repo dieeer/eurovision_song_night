@@ -1,5 +1,5 @@
 use eurovision;
-db.dropDatabase();
+
 
 db.players.insertMany([
   {
