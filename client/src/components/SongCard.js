@@ -1,5 +1,6 @@
 import playlistService from "../services/playlistService";
 import { useEffect, useState } from "react";
+const {flag} = require ('country-emoji')
 
 
 const SongCard = ({song}) => {
@@ -22,6 +23,7 @@ const SongCard = ({song}) => {
     e.preventDefault()
     const selectedPlaylist = playlists.find((playlist) => playlist._id === selectedPlaylistId)
     playlistService.addSongToPlaylist(selectedPlaylist, song)
+    playlistService.getPlaylists().then((playlists) => setPlaylists(playlists))
   }
 
 // set existing playlists to drop down menu
@@ -34,14 +36,16 @@ const SongCard = ({song}) => {
     )
   })
 
+  const countryFlag = flag(song.to_country)
+
 
   return (
     <>
     <div className='SongList'>
-        <h1>{song.performer}</h1>
-        <p>Song: {song.song}</p>
-        <p>Composers: {song.composers}</p>
-        <p>Year: {song.year}</p>
+        <h1>{song.song}</h1>
+        <p>{song.performer}</p>
+        <p>{song.year}</p>
+        <p>{countryFlag}</p>
         <form onSubmit={handleSubmit}>
           <select onChange={handleSelect}>
             <option value=''>Select Playlist</option>

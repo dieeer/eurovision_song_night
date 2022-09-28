@@ -39,12 +39,13 @@ const PlaylistsContainer = ({playlists}) => {
     , [])
   
   return (
-    <>
       <div className='playlist-wrapper'>
-      <PlaylistList playlists={playlistInfo} createPlaylist={createPlaylist} deletePlaylist={deletePlaylist}
+        <PlaylistList 
+        playlists={playlistInfo} 
+        createPlaylist={createPlaylist} 
+        deletePlaylist={deletePlaylist}
         updatePlaylist={updatePlaylist} />
       </div>
-    </>
   )
 }
 
