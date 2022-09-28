@@ -25,7 +25,7 @@ const SongDetail = ({}) => {
         <>
         <div className='SongList'>
 
-            <YoutubeEmbed url={song.youtube_url} />
+            {/* <YoutubeEmbed url={song.youtube_url} /> */}
 
             <p>Song: {song.song}</p>
             <p>Country: {song.to_country}</p>
