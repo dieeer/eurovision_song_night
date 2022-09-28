@@ -41,7 +41,7 @@ const PlaylistList = ({ playlists, deletePlaylist, createPlaylist }) => {
           <ul role='list' className='dash-list'>
             {playlistData}
           </ul>
-          <button onClick={handleSubmit} class='button primary'>
+          <button onClick={handleSubmit} className='button primary'>
             Create a new playlist
           </button>
         </div>

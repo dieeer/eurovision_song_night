@@ -1,4 +1,4 @@
-import HomePage from '../components/HomePage'
+import HomeSongList from '../components/HomeSongList'
 import { useState, useEffect } from 'react'
 import { getAll } from '../services/EuroServices'
 import PlaylistHomeCard from '../components/PlaylistHomeCard'
@@ -28,8 +28,9 @@ const HomeContainer = () => {
       <div className='stacked-group'>
         <div className='stacked-list'>
           <h4 className='stacked-group-title'>Songs</h4>
-
-          <HomePage randomSongs={homeSongsList} />
+          <ul role='list' class='dash-list'>
+            <HomeSongList randomSongs={homeSongsList} />
+          </ul>
           <Link to='/songs' className='button primary dash'>
             More Songs
           </Link>

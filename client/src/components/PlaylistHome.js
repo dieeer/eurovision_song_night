@@ -12,12 +12,11 @@ const songForCountries =  playlist.songs.map((songs) => {
 
 
     return (
-        <>
-
-            <span class="dash-list-text">Name: {playlist.name}</span>
-            <span class="dash-list-text">songs: {songCount}</span>
-            <span class="dash-list-text">countries:{songForCountries}</span>
-        </>
+      <>
+        <span className='dash-list-text'>Name: {playlist.name}</span>
+        <span className='dash-list-text'>songs: {songCount}</span>
+        <span className='dash-list-text'>countries:{songForCountries}</span>
+      </>
     )
 }
 
