@@ -88,7 +88,7 @@ function App() {
             element={<PlaylistsContainer playlists={playlists} />}
           />
           <Route
-            path='/playlists/:id'
+            path='/playlists/:id/'
             element={<PlaylistDetail getPlaylistForId={getPlaylistForId} />}
           />
          

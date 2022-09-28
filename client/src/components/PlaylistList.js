@@ -26,8 +26,9 @@ const PlaylistList = ({ playlists, deletePlaylist, createPlaylist }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     createPlaylist(name, songs)
-    setName('')
+    setName(name)
     setSongs([])
+    window.location.reload(true)
   }
 
   return (

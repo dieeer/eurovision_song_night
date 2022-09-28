@@ -47,7 +47,7 @@ const SongCard = ({ song }) => {
     <>
     <h3><Link to={"/songs/" + song._id}>{song.song}</Link></h3>
     <div className='SongList'>
-        <h1>{song.performer}</h1>
+        <h2>{song.performer}</h2>
         <p>Song: {song.song}</p>
         <p>Composers: {song.composers}</p>
         <p>Year: {song.year}</p>

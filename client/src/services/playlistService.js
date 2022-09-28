@@ -54,12 +54,8 @@ const playlistService = {
     },
     
 
-
-
-
-
-    deletePlaylist(playlist) {
-        return fetch(baseURL + playlist._id, {
+    deletePlaylist(id) {
+        return fetch(baseURL + id, {
             method: 'DELETE',
         })
     }, 
