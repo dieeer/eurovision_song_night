@@ -22,7 +22,7 @@ export default function AutocompleteSearchbar({ songs }) {
             options={songs}
             getOptionLabel={(songs) => songs.song + ' - ' + songs.performer}
             sx={{ width: '100%' }}
-            renderInput={(params) => <TextField {...params} label='songs' />}
+            renderInput={(params) => <TextField {...params} label='Search for a song' />}
             onChange={(event, value, reason) => handleChange(value)}
           />
           <SongCard song={chosenSong} />
