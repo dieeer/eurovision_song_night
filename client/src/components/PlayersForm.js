@@ -129,29 +129,29 @@ const PlayersForm = ({addPlayers}) => {
         <img id="api-img" src={formData.background}  className="select-background" />
         
 
-        <h2>Add you're avatar!</h2>
+            <h2>Add you're avatar!</h2>
             <img id="api-img" src={link1} className="static" />
-            <button onClick={handleImg} className="avatar" > add </button>
+            <button onClick={handleImg} className="avatar5" > add </button>
             <img id="api-img" src={link2} className="static" />
-            <button onClick={handleImg1} className="avatar"> add </button>
+            <button onClick={handleImg1} className="avatar5"> add </button>
             <img id="api-img" src={link3} className="static" />
-            <button onClick={handleImg2} className="avatar" > add </button>
-            <img id="api-img" src={link4} className="static" />
-            <button onClick={handleImg3} className="avatar" > add </button>
-            <img id="api-img" src={link5} className="static" />
-            <button onClick={handleImg4} className="avatar" > add </button>
+            <button onClick={handleImg2} className="avatar6" > add </button>
+            <img id="api-img" src={link4} className="static3" />
+            <button onClick={handleImg3} className="avatar4" > add </button>
+            <img id="api-img" src={link5} className="static3" />
+            <button onClick={handleImg4} className="avatar4" > add </button>
 
             <h2>Choose you're player theme!</h2>
-            <img id="api-img" src={link7} className="static" />
-            <button onClick={background} className="avatar" > add </button>
-            <img id="api-img" src={link8} className="static" />
-            <button onClick={background1} className="avatar"> add </button>
-            <img id="api-img" src={link9} className="static" />
-            <button onClick={background2} className="avatar" > add </button>
-            <img id="api-img" src={link10} className="static" />
-            <button onClick={background3} className="avatar" > add </button>
-            <img id="api-img" src={link11} className="static" />
-            <button onClick={background4} className="avatar" > add </button>
+            <img id="api-img" src={link7} className="static1" />
+            <button onClick={background} className="avatar2" > add </button>
+            <img id="api-img" src={link8} className="static1" />
+            <button onClick={background1} className="avatar2"> add </button>
+            <img id="api-img" src={link9} className="static1" />
+            <button onClick={background2} className="avatar2" > add </button>
+            <img id="api-img" src={link10} className="static2" />
+            <button onClick={background3} className="avatar3" > add </button>
+            <img id="api-img" src={link11} className="static2" />
+            <button onClick={background4} className="avatar3" > add </button>
             <form onSubmit={onSubmit} id="players-form" >
             <h2>Add Players Here!</h2>
             <div className="formWrap">
