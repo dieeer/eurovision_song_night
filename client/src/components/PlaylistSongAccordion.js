@@ -25,11 +25,6 @@ export default function ControlledAccordions({song, playlists}) {
 
   return (
     <div>
-    <div style={{ width: '25%'}}>song</div>
-    <div style={{ width: '25%'}}>country</div>
-    <div style={{ width: '25%'}}>artist</div>
-    <div style={{ width: '25%'}}>year</div>
-    <div>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
           aria-controls="panel1bh-content"
@@ -52,7 +47,6 @@ export default function ControlledAccordions({song, playlists}) {
 
         </AccordionDetails>
       </Accordion>
-    </div>
     </div>
   );
 }

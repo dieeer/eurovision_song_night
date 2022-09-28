@@ -63,7 +63,7 @@ const handleDeletePlaylist = () => {
                     Delete This Playlist
             </button>
             <br/>
-            <ol>
+            <ol style={{ 'padding-top': '2%'}}>
                 {songData}
             </ol>
 
