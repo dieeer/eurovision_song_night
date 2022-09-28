@@ -4,7 +4,6 @@ import playlistService from "../services/playlistService";
 import { useState, useEffect } from "react";
 
 
-
 const Contest = ({ contest }) => {
 
   const [playlistInfo, setPlaylistInfo] = useState({});
@@ -13,11 +12,14 @@ const Contest = ({ contest }) => {
 
 
   return (
-    <div className='contest-item'>
-      <Link to={"/contests/" + contest._id}>{contest.name}</Link>
-      <p></p>
-    </div>
+    <>
+      <Link to={'/contests/' + contest._id}>
+        <li className='dash-list-item'>
+          <span className='dash-list-text'>{contest.name}</span>
+        </li>
+      </Link>
+    </>
   )
 }
 
-export default Contest;
+export default Contest

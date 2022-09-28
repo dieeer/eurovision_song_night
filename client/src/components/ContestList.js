@@ -41,4 +41,4 @@ const ContestList = ({contests, createContest, deleteContest, updateContestd}) =
   )
 }
 
-export default ContestList;
+export default ContestList

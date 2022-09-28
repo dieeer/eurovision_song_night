@@ -63,11 +63,11 @@ function App() {
   }
 
   return (
-    <>
+    <main>
       <Router>
         <NavBar />
         <Routes>
-          <Route path='/' element={<HomeContainer/>} />
+          <Route path='/' element={<HomeContainer />} />
 
           {/* SONG ROUTES */}
           <Route
@@ -85,6 +85,8 @@ function App() {
             path='/playlists/:id'
             element={<PlaylistDetail getPlaylistForId={getPlaylistForId} />}
           />
+         
+
           <Route path='/players' element={<PlayersContainer />} />
 
           {/* CONTEST ROUTES */}
@@ -106,7 +108,7 @@ function App() {
           <Route path='/scorecard' element={<ScoreCard />} />
         </Routes>
       </Router>
-    </>
+    </main>
   )
 }
 
