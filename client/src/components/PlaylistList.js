@@ -10,10 +10,13 @@ const PlaylistList = ({ playlists, deletePlaylist, createPlaylist }) => {
 
   const playlistData = playlists.map((playlist, index) => {
     return (
-      <li className='dash-list-item' key={index}>
-        <Playlist playlist={playlist} />
-        <a onClick={() => deletePlaylist(playlist._id)}>delete</a>
-      </li>
+      <>
+        <li className='dash-list-item' key={index}>
+          <Playlist playlist={playlist} />
+          <a onClick={() => deletePlaylist(playlist._id)}>delete</a>
+        </li>
+        <hr />
+      </>
     )
   })
 

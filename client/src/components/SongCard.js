@@ -1,8 +1,8 @@
 import playlistService from '../services/playlistService'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-const {flag} = require ('country-emoji')
-
+import YoutubeEmbed from '../components/YoutubeEmbed'
+const { flag } = require('country-emoji')
 
 const SongCard = ({ song }) => {
   // drop down menu to push song object to playlist 'songs' array
@@ -39,25 +39,29 @@ const SongCard = ({ song }) => {
     )
   })
 
+  // {
+  //   /* <form onSubmit={handleSubmit}>
+  //         <select onChange={handleSelect}>
+  //           <option value=''>Select Playlist</option>
+  //           {playlistOptions}
+  //         </select>
+  //         <input type='submit' value='+' />
+  //       </form> */
+  // }
+
   const countryFlag = flag(song.to_country)
 
-
-  
   return (
     <>
-    <h3><Link to={"/songs/" + song._id}>{song.song}</Link></h3>
-    <div className='SongList'>
-        <h1>{song.performer}</h1>
-        <p>Song: {song.song}</p>
-        <p>Composers: {song.composers}</p>
-        <p>Year: {song.year}</p>
-        <form onSubmit={handleSubmit}>
-          <select onChange={handleSelect}>
-            <option value=''>Select Playlist</option>
-            {playlistOptions}
-          </select>
-          <input type='submit' value='+' />
-        </form>
+      <div className='SongList'>
+        <Link to={'/songs/' + song._id}>
+          <h1>
+            {countryFlag}
+            {song.song}
+          </h1>
+        </Link>
+        <p>{song.performer}</p>
+        <p>{song.year}</p>
       </div>
     </>
   )
