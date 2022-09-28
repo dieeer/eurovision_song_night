@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 const {flag} = require ('country-emoji')
 
 
-const { flag } = require('country-emoji')
 const SongCard = ({ song }) => {
   // drop down menu to push song object to playlist 'songs' array
   const [playlists, setPlaylists] = useState([])
