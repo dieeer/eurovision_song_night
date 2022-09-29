@@ -215,7 +215,6 @@ section {
 .stacked-group {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .stacked-song-group {
