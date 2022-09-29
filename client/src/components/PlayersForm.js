@@ -2,6 +2,7 @@ import {useState} from "react";
 import { postPlayer } from "../services/PlayersService";
 import './PlayersCard.css';
 import PlayersCard from "./PlayersCard";
+
 const link = 'https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper.png';
 const link1 = 'https://e7.pngegg.com/pngimages/340/946/png-clipart-avatar-user-computer-icons-software-developer-avatar-child-face.png';
 const link2 = 'https://w7.pngwing.com/pngs/861/742/png-transparent-fifa-18-just-for-laughs-comedy-festival-fifa-17-batdad-just-for-laughs-gags-men-s-expression-of-surprise-men-s-blue-dress-shirt-illustration-face-people-smiley.png';
@@ -15,6 +16,8 @@ const link9 = "https://www.irishexaminer.com/cms_media/module_img/2847/1423988_1
 const link10 = "https://wallpaperaccess.com/full/39612.jpg";
 const link11 = "https://escxtra.com/wp-content/uploads/ESC-2021-Logotipo-780x470.jpg";
 const link12 = 'https://dk135eecbplh9.cloudfront.net/assets/blt0fa990a7507d7a41/Loading-Screen-Animation.png'
+
+
 const PlayersForm = ({addPlayers}) => {
 
 
@@ -129,7 +132,7 @@ const PlayersForm = ({addPlayers}) => {
         <img id="api-img" src={formData.background}  className="select-background" />
         
 
-        <h2>Add you're avatar!</h2>
+        <h2>Select your avatar</h2>
             <img id="api-img" src={link1} className="static" />
             <button onClick={handleImg} className="avatar" > add </button>
             <img id="api-img" src={link2} className="static" />
@@ -141,7 +144,7 @@ const PlayersForm = ({addPlayers}) => {
             <img id="api-img" src={link5} className="static" />
             <button onClick={handleImg4} className="avatar" > add </button>
 
-            <h2>Choose you're player theme!</h2>
+            <h2>Apply a theme</h2>
             <img id="api-img" src={link7} className="static" />
             <button onClick={background} className="avatar" > add </button>
             <img id="api-img" src={link8} className="static" />
@@ -153,7 +156,7 @@ const PlayersForm = ({addPlayers}) => {
             <img id="api-img" src={link11} className="static" />
             <button onClick={background4} className="avatar" > add </button>
             <form onSubmit={onSubmit} id="players-form" >
-            <h2>Add Players Here!</h2>
+            <h2>Create new player</h2>
             <div className="formWrap">
                 <label htmlFor="name">Name:</label>
                 <input 
