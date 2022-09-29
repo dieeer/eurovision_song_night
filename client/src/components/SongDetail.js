@@ -82,19 +82,14 @@ const SongDetail = ({}) => {
           <div className='stacked-group'>
             <div className='stacked-playlist-list'>
               <YoutubeEmbed url={youtubeUrl} />
-
-              <form onSubmit={handleSubmit}>
-                <select onChange={handleSelect}>
-                <option value=''>Select Playlist</option>
-                  {playlistOptions}
-                </select>
-                <input type='submit' value='+' />
-              </form>
-
-              <button className='button primary padding right'>
-                Add to playlist
-              </button>
               <div className='video-caption-container'>
+                <form onSubmit={handleSubmit}>
+                  <select onChange={handleSelect}>
+                    <option value=''>Select Playlist</option>
+                    {playlistOptions}
+                  </select>
+                  <input className="button primary padding" type='submit' value='Add to playlist' />
+                </form>
                 <h3 className='main-title'>Song Stats</h3>
                 <dl className='stacked-group'>
                   <div className='stacked-list'>
