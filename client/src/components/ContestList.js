@@ -3,23 +3,25 @@ import Contest from './Contest'
 import { useState } from 'react'
 import CreateContest from './CreateContest'
 
-const ContestList = ({contests, createContest, deleteContest, updateContestd}) => {
+const ContestList = ({
+  contests,
+  createContest,
+  deleteContest,
+  updateContestd,
+}) => {
   const [name, setName] = useState('')
   const [playlist, setPlaylist] = useState('')
 
-
-
-    const contestData = contests.map((contest) => {
-        return (
-          <li class="dash-list-item">
-            <Contest 
-            key={contest._id}
-            contest={contest}
-            />
-            </li>
-        )
-    })
-
+  const contestData = contests.map((contest) => {
+    return (
+      <>
+        <li class='dash-list-item'>
+          <Contest key={contest._id} contest={contest} />
+        </li>
+        <hr />
+      </>
+    )
+  })
 
   return (
     <>
