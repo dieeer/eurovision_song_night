@@ -1,0 +1,171 @@
+
+img{
+    border-radius: 10px;
+    padding: 5px;
+}
+.db-img2 {
+    width: 350px;
+    height: 250px;
+    display: inline;
+    border: solid 1px grey;
+    margin-top: 2em;
+    position: absolute;
+    left: 50px;
+    top: 45px;
+    z-index: 1;
+}
+.db-img:hover{
+    transform: scale(1.2);
+    
+}
+.select-profile{
+    width: 400px;
+    height: 250px;
+   float: right;
+    border: solid 1px grey;
+    
+
+}
+
+.select-background{
+    width: 250px;
+    height: 150px;
+   float: right;
+    border: solid 1px grey;
+    position: relative;
+    top:300px;
+    left:270px;
+    
+
+}
+
+
+.flex {
+    display: inline;
+}
+.button{
+    display:'inline';
+    float: left;
+    
+
+}
+.avatar{
+    margin-right: 5px;
+}
+
+.avatar1{
+    margin-right: 5px;
+    position: relative;
+    right: 230px;
+    /* moves these images left with static1 */
+}
+
+.avatar2{
+    margin-right: 5px;
+    position: relative;
+    right: 90px
+
+}
+.avatar3{
+    margin-right: 5px;
+    position: relative;
+    right: 90px
+
+}
+
+
+
+.static{
+    width: 120px;
+    height: 60px;
+    border: solid 3px rgb(108, 106, 106);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    
+
+}
+.static1{
+    width: 120px;
+    height: 60px;
+    border: solid 3px rgb(108, 106, 106);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    right: 230px;
+   /* moves these images left along with avatar1 */
+
+}
+.static2{
+    width: 120px;
+    height: 60px;
+    border: solid 3px rgb(108, 106, 106);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    right: 230px;
+   position: relative;
+   right: 536px;
+   top: 100px;
+
+}
+.static3{
+    width: 120px;
+    height: 60px;
+    border: solid 3px rgb(108, 106, 106);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    left: -90px;
+    top: 5px;
+
+
+}
+
+
+
+
+button{
+    border-radius: 5px;
+}
+.db-background1{
+    height: 400px;
+    width: 1200px;
+    border-radius: 20px;
+    
+
+}
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.h2-color{
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 150px;
+    left: 500px;
+    color: white;
+    z-index: 1;
+    font-size: 2em;
+    background: rgb(85, 85, 131);
+  
+    width: 20%;
+    padding: 10px;
+    padding-right: 5px;
+    border-radius: 10px;
+}
+body{
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
