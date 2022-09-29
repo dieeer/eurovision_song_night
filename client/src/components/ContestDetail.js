@@ -10,8 +10,16 @@ const ContestDetail = ({ getContestForId }) => {
 
   return (
     <div>
-    {singleContest ? <Contest contest={singleContest} /> : <p>loading...</p>}
-      {/* <Game contest={singleContest}/> */}
+      <div class='stacked-group'>
+        <div class='stacked-playlist-list'>
+          {singleContest ? (
+            <Contest contest={singleContest} />
+          ) : (
+            <p>loading...</p>
+          )}
+          {/* <Game contest={singleContest}/> */}
+        </div>
+      </div>
     </div>
   )
 }

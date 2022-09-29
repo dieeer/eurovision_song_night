@@ -10,7 +10,7 @@ const NavBar = () => {
             <span className='sr-only'>Eurovision Song night</span>
             <img
               className='logo'
-              src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
+              src='https://i.imgur.com/Ixaso8v.png'
               alt=''
             />
           </Link>

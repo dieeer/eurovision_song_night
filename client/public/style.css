@@ -144,7 +144,7 @@ section {
 .main-title {
   color: #24676e;
   padding-bottom: 20px;
-  text-align:center;
+  text-align: center;
 }
 
 .header-container {
@@ -155,7 +155,7 @@ section {
 }
 
 .logo {
-  height: 50px;
+  height: 70px;
 }
 .main-nav {
   display: flex;
@@ -336,7 +336,7 @@ section {
 }
 
 .right {
- float: right !important;
+  float: right !important;
 }
 
 .icon {

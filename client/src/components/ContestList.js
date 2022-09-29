@@ -11,25 +11,28 @@ const ContestList = ({contests, createContest, deleteContest, updateContestd}) =
 
     const contestData = contests.map((contest) => {
         return (
+          <li class="dash-list-item">
             <Contest 
             key={contest._id}
             contest={contest}
             />
+            </li>
         )
     })
 
 
   return (
-    <div 
-    className="contest-wrapper">
-        <h2>Contests</h2>
-        <CreateContest createContest={createContest}/>
-        {/* <form onSubmit={handleSubmit} >
+    <>
+      {/* <form onSubmit={handleSubmit} >
             <input type='submit' name='submit'  value='Create Contest'/>
         </form> */}
-        <br/>
-    {contestData}
-    </div>
+      <ul role='list' className='dash-list'>
+        {contestData}
+      </ul>
+      <br />
+      <h5 className='title'>Create new contest</h5>
+      <CreateContest createContest={createContest} />
+    </>
   )
 }
 

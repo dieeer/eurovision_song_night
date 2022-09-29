@@ -21,18 +21,20 @@ const Contest = ({ contest }) => {
       </div>
     );
   });
-
+ const numberOfSongs = songsMap.length
 
   return (
     <>
       <Link to={'/contests/' + contest._id}>
-        <li className='dash-list-item'>
-          <span className='dash-list-text'>{contest.name}</span>
-        </li>
-          <div>
-          <h3>{contest.playlist.name}</h3>
-          {songsMap}
-          </div>
+        <span className='playlist-list-text'>
+          <strong>Contest:</strong> {contest.name}
+        </span>
+        <span className='playlist-list-text'>
+          <strong>Playlist:</strong> {contest.playlist.name}
+        </span>
+        <span className='playlist-list-text'>
+          <strong>Songs:</strong> {numberOfSongs}
+        </span>
       </Link>
     </>
   )
