@@ -30,9 +30,9 @@ import PlayersContainer from './containers/PlayersContainer'
 
 // SCORECARD IMPORT
 
-import ScoreCard from './components/ScoreCard'
+import ScoreContainer from './containers/ScoreContainer'
 import HomeContainer from './containers/HomeContainer'
-function App() {  
+function App() {
   // const based on a list of contests.
 
   const [contests, setContests] = useState([])
@@ -63,7 +63,6 @@ function App() {
     playlistService.getPlaylists().then((playlists) => setPlaylists(playlists))
   }, [])
 
-
   const getPlaylistForId = (playlistId) => {
     return playlists.find((playlist) => playlist._id === playlistId)
   }
@@ -76,11 +75,8 @@ function App() {
           <Route path='/' element={<HomeContainer />} />
 
           {/* SONG ROUTES */}
-          <Route
-            path='/songs'
-            element={<SongsContainer songs={songs}/>}
-          />
-          <Route path="/songs/:id/" element={<SongDetail/>} />
+          <Route path='/songs' element={<SongsContainer songs={songs} />} />
+          <Route path='/songs/:id/' element={<SongDetail />} />
 
           {/* PLAYLIST ROUTES */}
           <Route
@@ -91,7 +87,6 @@ function App() {
             path='/playlists/:id/'
             element={<PlaylistDetail getPlaylistForId={getPlaylistForId} />}
           />
-         
 
           <Route path='/players' element={<PlayersContainer />} />
 
@@ -111,9 +106,16 @@ function App() {
             element={<Game getContestForId={getContestForId} />}
           />
           {/* SCORECARD ROUTES */}
-          <Route path='/scorecard' element={<ScoreCard />} />
+          <Route path='/scorecard' element={<ScoreContainer />} />
         </Routes>
       </Router>
+      <footer>
+        <section>
+          <div class='footer'>
+            <h4>what a wonderful world!</h4>
+          </div>
+        </section>
+      </footer>
     </main>
   )
 }

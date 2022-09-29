@@ -11,6 +11,8 @@
     "playlist-seeds": "mongosh < db/playlist_seeds.js",
     "players-seeds": "mongosh < db/players_seeds.js",
     "avatar-seeds": "mongosh < db/avater_seeds.js"
+    "scores-seeds": "mongosh < db/scorecard_seeds.js"
+
   },
   "author": "",
   "license": "ISC",
