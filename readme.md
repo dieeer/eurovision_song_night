@@ -57,5 +57,5 @@
       </li>
     </ul>
   <hr>
-  <p> credits to <a href=https://github.com/Spijkervet>Spijkervet</a>  for the Eurovision song dataset https://github.com/Spijkervet/eurovision-dataset </p>
+  <sub> credits to <a href=https://github.com/Spijkervet>Spijkervet</a>  for the Eurovision song dataset https://github.com/Spijkervet/eurovision-dataset </sub>
   </div>
