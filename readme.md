@@ -7,7 +7,7 @@
   <hr>
   <p> The Eurovision Song Night app allows you to host your very own contest night!</p>
   <p> This project was completed over the course of a week going from 0 code to a functional web-app and presentable from Thursday 22nd September to Thursday 29th September. </p>
-  <p> Current functionality is as below: </p>
+  <h3>Current functionality is as below:</h3>
 <ul> 
   <li>
     Search song by name or artist
@@ -29,7 +29,7 @@
   </li>
   </ul>
   <hr>
-  <h3> screenshots</h3>
+  <h3>Screenshots</h3>
   <div display=flex>
     <p> Home screen </p>
 <img src=https://user-images.githubusercontent.com/107511052/193864341-1a9fd62c-4723-46d7-810c-ea9f108966d0.png>
@@ -39,7 +39,7 @@
 <img src=https://user-images.githubusercontent.com/107511052/193864580-783e942d-f849-4aa1-89e4-f32f5fafa24b.png>
   </div>
   <div class=none>
-    <h3> functionality we were working towards </h3>
+    <h3> Functionality we were working towards </h3>
     <ul>
     <li> 
       networked multiplayer akin to Kahoot
