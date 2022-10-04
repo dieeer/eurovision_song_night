@@ -3,7 +3,7 @@
 
 <h1>Eurovision Song Night</h1>
   <h2> Built with JavaScript, React, Node, Material-UI and MongoDB </h2>
-  <h3> a collaborative team project between <a href=https://github.com/conradr>Conrad Rossouw</a>, <a href=https://github.com/FlarePhoto75>Steven Todd</a>, <a href=https://github.com/g-reg7554> Gregor Campbell</a> and <a href=https://github.com/dieeer> Justin Reid.</a> </h3>
+  <h3> A collaborative team project between <a href=https://github.com/conradr>Conrad Rossouw</a>, <a href=https://github.com/FlarePhoto75>Steven Todd</a>, <a href=https://github.com/g-reg7554> Gregor Campbell</a> and <a href=https://github.com/dieeer> Justin Reid.</a> </h3>
   <hr>
   <p> The Eurovision Song Night app allows you to host your very own contest night!</p>
   <p> This project was completed over the course of a week going from 0 code to a functional web-app and presentable from Thursday 22nd September to Thursday 29th September. </p>
